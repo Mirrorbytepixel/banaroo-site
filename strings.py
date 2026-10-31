@@ -193,9 +193,9 @@ EN = {
 "how_3_h": "We build it, you go live",
 "how_3_p": "We set up your brand, website and bot within days. Agents add the app to their home screen and leads start coming in.",
 
-"roi_h": "One extra sale pays for a year.",
+"roi_h": "One extra sale pays for everything, for a year.",
 "roi_num": "$3,600",
-"roi_p": "A $120,000 condo sale at 3% commission is $3,600. That's more than a year of Growth ($3,228). The bot only has to find you one owner you would have missed.",
+"roi_p": "A $120,000 condo sale at 3% commission is $3,600. That's more than a year of Growth ($3,228): the CRM, your website, the developments feed and the lead bot. One deal you would otherwise have missed covers it all.",
 
 "price_eyebrow": "Pricing",
 "price_h2": "Simple monthly plans. No surprises.",
@@ -478,9 +478,9 @@ TH = {
 "how_3_h": "เราสร้างให้ คุณเริ่มใช้งาน",
 "how_3_p": "เราตั้งค่าแบรนด์ เว็บไซต์ และบอทให้ภายในไม่กี่วัน เอเจนต์เพิ่มแอปไว้ที่หน้าจอโฮม แล้วลีดก็เริ่มเข้ามา",
 
-"roi_h": "ขายเพิ่มแค่หนึ่งรายการ คุ้มไปทั้งปี",
+"roi_h": "ขายเพิ่มแค่หนึ่งรายการ คุ้มทั้งระบบไปทั้งปี",
 "roi_num": "฿108,000",
-"roi_p": "ขายคอนโด ฿3.6M คอมมิชชัน 3% ได้ ฿108,000 จ่ายค่าแพ็กเกจ Growth ได้ทั้งปี บอทแค่ต้องหาเจ้าของที่คุณอาจพลาดให้เจอเพียงรายเดียว",
+"roi_p": "ขายคอนโด ฿3.6M คอมมิชชัน 3% ได้ ฿108,000 มากกว่าค่าแพ็กเกจ Growth ทั้งปี ซึ่งรวม CRM เว็บไซต์ ฟีดโครงการใหม่ และบอทหาลีด ดีลเดียวที่คุณอาจพลาดก็คุ้มแล้ว",
 
 "price_eyebrow": "ราคา",
 "price_h2": "แพ็กเกจรายเดือนที่เข้าใจง่าย ไม่มีค่าใช้จ่ายแอบแฝง",
