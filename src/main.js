@@ -43,6 +43,7 @@
       shown.forEach(function (el, i) {
         el.querySelector('.ago').textContent = ago(minutes[i]);
         el.classList.toggle('old', i === MAX - 1);
+        el.classList.toggle('fresh', i === 0);
         el.querySelector('i').style.display = i === 0 ? '' : 'none';
         feed.appendChild(el);
       });
@@ -180,6 +181,15 @@
     }
   }
 
+  // Launch offer: days-left counter; the banner hides itself after the end date
+  var offer = document.getElementById('offer');
+  if (offer) {
+    var left = Math.ceil((new Date(offer.dataset.end) - new Date()) / 864e5);
+    var days = document.getElementById('offer-days');
+    if (left <= 0) offer.remove();
+    else if (days && left <= 120) { days.textContent = days.dataset.t.replace('{n}', left); days.hidden = false; }
+  }
+
   // Plan buttons preselect the form
   var sel = document.getElementById('plan-select');
   document.querySelectorAll('[data-plan]').forEach(function (a) {
@@ -188,6 +198,10 @@
 
   // LINE / WhatsApp: real links once the accounts exist (set in build config)
   var cfg = window.BANAROO || {};
+  // Until the accounts exist, hide the chat buttons instead of showing 'coming soon'
+  if (!cfg.line && !cfg.whatsapp) {
+    document.querySelectorAll('.contact-or, .contacts').forEach(function (el) { el.hidden = true; });
+  }
   [['c-line', cfg.line], ['c-wa', cfg.whatsapp]].forEach(function (p) {
     var el = document.getElementById(p[0]);
     if (el && p[1]) {
