@@ -180,6 +180,15 @@
     }
   }
 
+  // Launch offer: days-left counter; the banner hides itself after the end date
+  var offer = document.getElementById('offer');
+  if (offer) {
+    var left = Math.ceil((new Date(offer.dataset.end) - new Date()) / 864e5);
+    var days = document.getElementById('offer-days');
+    if (left <= 0) offer.remove();
+    else if (days && left <= 120) { days.textContent = days.dataset.t.replace('{n}', left); days.hidden = false; }
+  }
+
   // Plan buttons preselect the form
   var sel = document.getElementById('plan-select');
   document.querySelectorAll('[data-plan]').forEach(function (a) {
