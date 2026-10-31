@@ -121,8 +121,8 @@ EN = {
 "web_g6_p": "Most buyers browse on their phone, so every page is built for a small screen first.",
 "web_inc_b": "Included in every plan.",
 "web_inc": "No web developer, no plugins, no copying listings by hand.",
-"web_link_crm": "See the same listings in the CRM",
-"web_link": "See the demo agency's website",
+"web_link_crm": "See it in the CRM",
+"web_link": "See the demo website",
 "web_alt": "Demo agency website built with Banaroo",
 
 "dev_tag": "Developments feed",
@@ -414,8 +414,8 @@ TH = {
 "web_g6_p": "ลูกค้าส่วนใหญ่ดูบนมือถือ ทุกหน้าจึงออกแบบสำหรับจอเล็กก่อน",
 "web_inc_b": "รวมอยู่ในทุกแพ็กเกจ",
 "web_inc": "ไม่ต้องจ้างคนทำเว็บ ไม่ต้องใช้ปลั๊กอิน ไม่ต้องคัดลอกทรัพย์เอง",
-"web_link_crm": "ดูทรัพย์ชุดเดียวกันใน CRM",
-"web_link": "ดูเว็บไซต์ของเอเจนซี่เดโม",
+"web_link_crm": "ดูใน CRM",
+"web_link": "ดูเว็บไซต์เดโม",
 "web_alt": "เว็บไซต์เอเจนซี่เดโมที่สร้างด้วย Banaroo",
 
 "dev_tag": "ฟีดโครงการใหม่",
