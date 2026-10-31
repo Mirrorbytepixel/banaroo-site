@@ -99,6 +99,46 @@
     } else { running = true; show(); }
   }
 
+  // Lead-bot animation
+  var ba = document.getElementById('botanim');
+  if (ba) {
+    var btap = ba.querySelector('.ba-tap'), bbase = ba.className, bi = 0, btimer = null, brun = false;
+    // [classes, tap x%, tap y%, press?, ms]
+    var bseq = [
+      ['', 88, 110, 0, 500],
+      ['post', 88, 110, 0, 700],
+      ['post scan', 88, 110, 0, 900],
+      ['post scan m', 88, 110, 0, 900],
+      ['post m k1', 88, 110, 0, 500],
+      ['post m k1 k2', 88, 110, 0, 1100],
+      ['fly', 88, 110, 0, 900],
+      ['fly', 86, 0, 0, 450],
+      ['fly claim', 86, 0, 1, 1800],
+      ['fly claim', 88, 110, 0, 500],
+      ['fly claim out', 88, 110, 0, 400]
+    ];
+    var bshow = function () {
+      var st = bseq[bi];
+      ba.className = bbase + ' ' + st[0];
+      var c = ba.querySelector('.ba-claim');
+      var y = st[2];
+      if (y === 0 && c) { var r = c.getBoundingClientRect(), R = ba.getBoundingClientRect(); y = ((r.top + r.height / 2 - R.top) / R.height) * 100; }
+      btap.style.setProperty('--tx', st[1] + '%'); btap.style.setProperty('--ty', y + '%');
+      btap.style.opacity = st[2] > 100 ? 0 : 1;
+      btap.classList.remove('press'); if (st[3]) { void btap.offsetWidth; btap.classList.add('press'); }
+      btimer = setTimeout(function () { bi = (bi + 1) % bseq.length; if (brun) bshow(); }, st[4]);
+    };
+    if (reduce) { ba.className = bbase + ' post m k1 k2'; }
+    else if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting && !brun) { brun = true; bshow(); }
+          else if (!e.isIntersecting && brun) { brun = false; clearTimeout(btimer); }
+        });
+      }, { threshold: 0.3 }).observe(ba);
+    } else { brun = true; bshow(); }
+  }
+
   // Plan buttons preselect the form
   var sel = document.getElementById('plan-select');
   document.querySelectorAll('[data-plan]').forEach(function (a) {

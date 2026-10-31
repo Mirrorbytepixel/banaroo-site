@@ -43,7 +43,7 @@ for code, label, path, strings in LANGS:
     def sub(m):
         k = m.group(1) or m.group(2)
         if m.group(1):
-            return raw[k]
+            return raw[k] if k in raw else vals[k]
         if k not in vals: raise KeyError(k)
         return html.escape(vals[k], quote=True)
     out = re.sub(r"\{\{\{(\w+)\}\}\}|\{\{(\w+)\}\}", sub, tpl)
