@@ -199,7 +199,7 @@ EN = {
 
 "price_eyebrow": "Pricing",
 "price_h2": "Simple monthly plans. No surprises.",
-"price_sub": "Prices per agency, per month. One setup fee of $299 on any plan covers your branding, website and listing import.",
+"price_sub": "Prices per agency, per month. No setup fee for our first 10 agencies: we do your branding, website and listing import for free.",
 "per_month": "/ month",
 "plan_popular": "Most popular",
 "plan_start": "Start",
@@ -239,7 +239,7 @@ EN = {
 "faq_3_q": "How long does setup take?",
 "faq_3_a": "Usually a few days after we get your logo, listings and any channels you want watched. We do the setup and the listing import for you.",
 "faq_4_q": "Can you move my listings from Excel or Google Sheets?",
-"faq_4_a": "Yes. Importing your existing listings and contacts is part of the setup fee.",
+"faq_4_a": "Yes. We import your existing listings and contacts as part of your setup.",
 "faq_5_q": "Which cities and countries do you work in?",
 "faq_5_a": "Any city where agencies find owners and buyers online. Areas, currency, languages, price bands and the developments feed are set up per city, so tell us where you sell and we'll show you what's ready today.",
 "faq_6_q": "Who owns the data?",
@@ -249,7 +249,7 @@ EN = {
 "faq_8_q": "Can I use my own domain?",
 "faq_8_a": "Yes. We connect the domain you already have, or help you pick one.",
 "faq_9_q": "How do I sign up and pay?",
-"faq_9_a": "Send the form at the bottom of this page. We email your setup plan and an invoice for the setup fee and first month. Setup starts once it's paid, and you're live within days.",
+"faq_9_a": "Send the form at the bottom of this page. We send you your setup plan and an invoice for the first month. Setup starts once it's paid, and you're live within days.",
 
 "cta_h2": "Start your agency on Banaroo.",
 "cta_p": "It takes a minute: who you are, where you work and which plan. We reply with your setup plan, and you're live within days.",
@@ -484,7 +484,7 @@ TH = {
 
 "price_eyebrow": "ราคา",
 "price_h2": "แพ็กเกจรายเดือนที่เข้าใจง่าย ไม่มีค่าใช้จ่ายแอบแฝง",
-"price_sub": "ราคาต่อเอเจนซี่ต่อเดือน ค่าติดตั้งครั้งเดียว ฿9,900 ทุกแพ็กเกจ รวมการทำแบรนด์ เว็บไซต์ และย้ายข้อมูลทรัพย์",
+"price_sub": "ราคาต่อเอเจนซี่ต่อเดือน ไม่มีค่าติดตั้งสำหรับ 10 เอเจนซี่แรก เราทำแบรนด์ เว็บไซต์ และย้ายข้อมูลทรัพย์ให้ฟรี",
 "per_month": "/ เดือน",
 "plan_popular": "ยอดนิยม",
 "plan_start": "Start",
@@ -524,7 +524,7 @@ TH = {
 "faq_3_q": "ติดตั้งใช้เวลานานแค่ไหน?",
 "faq_3_a": "ปกติไม่กี่วันหลังจากได้รับโลโก้ รายการทรัพย์ และช่องทางที่ต้องการให้บอทดู เราตั้งค่าและย้ายข้อมูลให้ทั้งหมด",
 "faq_4_q": "ย้ายรายการทรัพย์จาก Excel หรือ Google Sheets ได้ไหม?",
-"faq_4_a": "ได้ การย้ายรายการทรัพย์และรายชื่อติดต่อเดิมรวมอยู่ในค่าติดตั้งแล้ว",
+"faq_4_a": "ได้ เราย้ายรายการทรัพย์และรายชื่อติดต่อเดิมให้ระหว่างการตั้งค่า",
 "faq_5_q": "ใช้ได้แค่ในพัทยาหรือเปล่า?",
 "faq_5_a": "เราเริ่มที่พัทยา และฟีดโครงการใหม่ครอบคลุมพัทยาก่อน เอเจนซี่ในเมืองอื่นติดต่อเราได้ พื้นที่ ช่วงราคา และฟีดจะตั้งค่าแยกตามเมือง",
 "faq_6_q": "ใครเป็นเจ้าของข้อมูล?",
@@ -534,7 +534,7 @@ TH = {
 "faq_8_q": "ใช้โดเมนของตัวเองได้ไหม?",
 "faq_8_a": "ได้ เราเชื่อมโดเมนที่คุณมีอยู่ หรือช่วยเลือกโดเมนใหม่ให้",
 "faq_9_q": "สมัครและชำระเงินอย่างไร?",
-"faq_9_a": "กรอกแบบฟอร์มด้านล่างของหน้านี้ เราจะส่งแผนการตั้งค่าและใบแจ้งหนี้ค่าติดตั้งพร้อมค่าบริการเดือนแรกทางอีเมล เริ่มตั้งค่าเมื่อชำระเงินแล้ว และพร้อมใช้งานในไม่กี่วัน",
+"faq_9_a": "กรอกแบบฟอร์มด้านล่างของหน้านี้ เราจะส่งแผนการตั้งค่าและใบแจ้งหนี้ค่าบริการเดือนแรกให้คุณ เริ่มตั้งค่าเมื่อชำระเงินแล้ว และพร้อมใช้งานในไม่กี่วัน",
 
 "cta_h2": "เริ่มใช้ Banaroo กับเอเจนซี่ของคุณ",
 "cta_p": "ใช้เวลาแค่นาทีเดียว บอกว่าคุณคือใคร ทำงานที่ไหน และสนใจแพ็กเกจไหน เราจะส่งแผนการตั้งค่ากลับไป และพร้อมใช้งานในไม่กี่วัน",
