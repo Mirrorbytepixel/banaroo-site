@@ -32,6 +32,7 @@
     </a>
     <nav class="nav-links" aria-label="Main">
       <a href="#product">{{nav_product}}</a>
+      <a href="#website">{{nav_web}}</a>
       <a href="#how">{{nav_how}}</a>
       <a href="#pricing">{{nav_pricing}}</a>
       <a href="#faq">{{nav_faq}}</a>
@@ -48,18 +49,19 @@
           <a href="{{site_url}}" target="_blank" rel="noopener"><span class="pm-ic pm-web"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><span><b>{{demo_web_t}}</b><small>{{demo_web_s}}</small></span></a>
         </div>
       </details>
-      <a class="btn btn-dark nav-book" href="#book">{{nav_book}}</a>
+      <a class="btn btn-dark nav-book" href="#start">{{nav_book}}</a>
       <details class="pop menu">
         <summary class="menu-btn" aria-label="Menu"><svg class="i" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
         <div class="pop-menu menu-panel">
           <a href="#product">{{nav_product}}</a>
+          <a href="#website">{{nav_web}}</a>
           <a href="#how">{{nav_how}}</a>
           <a href="#pricing">{{nav_pricing}}</a>
           <a href="#faq">{{nav_faq}}</a>
           <a href="{{demo_url}}" target="_blank" rel="noopener">{{demo_crm_t}} ↗</a>
           <a href="{{site_url}}" target="_blank" rel="noopener">{{demo_web_t}} ↗</a>
           <div class="menu-langs">{{{lang_menu}}}</div>
-          <a class="btn btn-primary btn-block" href="#book">{{nav_book}}</a>
+          <a class="btn btn-primary btn-block" href="#start">{{nav_book}}</a>
         </div>
       </details>
     </div>
@@ -88,7 +90,7 @@
           <svg class="i dc-go" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
         </a>
       </div>
-      <p class="micro"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>{{hero_note}} <a href="#book">{{hero_cta_book}} →</a></p>
+      <p class="micro"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>{{hero_note}} <a href="#start">{{hero_cta_book}} →</a></p>
     </div>
 
     <div class="hero-visual">
@@ -156,7 +158,7 @@
           <div class="ba-stage">
             <div class="ba-scan"><span class="ba-dot"></span>{{ba_scanning}}</div>
             <div class="ba-post">
-              <div class="ba-fb"><span class="ba-f">f</span><b>{{ba_group}}</b><small>· 2 {{feed_min}}</small></div>
+              <div class="ba-fb"><span class="ba-f ba-s1">f</span><span class="ba-f ba-tg ba-s2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.7 4.3 3.4 11c-1.2.5-1.1 1.2-.2 1.5l4.4 1.4 1.7 5.2c.2.6.4.8.8.8s.6-.2.9-.4l2.1-2 4.4 3.2c.8.5 1.4.2 1.6-.8l2.9-13.5c.3-1.2-.4-1.7-1.3-1.1zM9.9 14.6l-.4 3.6-1.3-4.2 9.3-6z"/></svg></span><b class="ba-s1">{{ba_group}}</b><b class="ba-s2">{{ba_group_2}}</b><small>· 2 {{feed_min}}</small></div>
               <div class="ba-who"><span class="ba-av">S</span><b>{{feed_1_name}}</b></div>
               <p class="ba-txt">{{{ba_post}}}</p>
               <span class="ba-beam"></span>
@@ -197,45 +199,6 @@
             <li><i class="mint"></i>{{crm_task_3}}</li>
           </ul>
         </div>
-      </div>
-    </div>
-
-    <!-- Website -->
-    <div class="feat reveal">
-      <div class="feat-copy">
-        <span class="tag tag-sky"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>{{web_tag}}</span>
-        <h3>{{web_h3}}</h3>
-        <p>{{web_p}}</p>
-        <ul class="ticks"><li>{{web_li_1}}</li><li>{{web_li_2}}</li><li>{{web_li_3}}</li></ul>
-        <a class="textlink" href="{{site_url}}" target="_blank" rel="noopener">{{web_link}} <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-      </div>
-      <div class="feat-vis web-vis">
-        <div class="browser">
-          <div class="browser-bar"><i></i><i></i><i></i><span>baylight.banaroo.app</span></div>
-          <img src="/img/site-home.webp" width="1280" height="766" alt="{{web_alt}}">
-        </div>
-        <div class="mini-phone lp" id="langanim">
-            <div class="lp-scr">
-              <div class="lp-v v-en" lang="en">
-                <div class="lp-top"><span class="lp-brand">≋ <i>Bay</i> light</span><span class="lp-pill">EN ▾</span></div>
-                <div class="lp-hero"><b>Homes by the sea, picked for you</b><span class="lp-tabs"><em>Buy</em><em>Rent</em></span></div>
-                <div class="lp-card"><span class="lp-ph"></span><div><b>Horizon Tower</b><small>1 bed · 32 m²</small><i>$78K</i></div></div>
-                <span class="lp-btn">View homes</span>
-              </div><div class="lp-v v-ru" lang="ru">
-                <div class="lp-top"><span class="lp-brand">≋ <i>Bay</i> light</span><span class="lp-pill">RU ▾</span></div>
-                <div class="lp-hero"><b>Дома у моря, подобранные для вас</b><span class="lp-tabs"><em>Купить</em><em>Аренда</em></span></div>
-                <div class="lp-card"><span class="lp-ph"></span><div><b>Horizon Tower</b><small>1 спальня · 32 м²</small><i>$78K</i></div></div>
-                <span class="lp-btn">Смотреть объекты</span>
-              </div><div class="lp-v v-zh" lang="zh">
-                <div class="lp-top"><span class="lp-brand">≋ <i>Bay</i> light</span><span class="lp-pill">中文 ▾</span></div>
-                <div class="lp-hero"><b>为您精选的海边好房</b><span class="lp-tabs"><em>买房</em><em>租房</em></span></div>
-                <div class="lp-card"><span class="lp-ph"></span><div><b>Horizon Tower</b><small>1 卧 · 32 m²</small><i>$78K</i></div></div>
-                <span class="lp-btn">查看房源</span>
-              </div>
-              <div class="lp-menu"><span data-l="0">English</span><span data-l="1">Русский</span><span data-l="2">中文</span></div>
-            </div>
-            <span class="lp-tap"></span>
-          </div>
       </div>
     </div>
 
@@ -303,6 +266,69 @@
   </div>
 </section>
 
+<!-- WEBSITE -->
+<section class="sec soft site" id="website">
+  <div class="wrap">
+    <p class="eyebrow center"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>{{web_tag}}</p>
+    <h2 class="center">{{web_h2}}</h2>
+    <p class="sub center">{{web_sub}}</p>
+    <div class="site-row">
+      <div class="site-flow reveal">
+      <ol class="flow">
+        <li><span class="fl-ic"><svg class="i" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M12 8v6M9 11h6"/></svg></span><div><h4>{{web_flow_1_h}}</h4><p>{{web_flow_1_p}}</p></div></li>
+        <li><span class="fl-ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><div><h4>{{web_flow_2_h}}</h4><p>{{web_flow_2_p}}</p></div></li>
+        <li><span class="fl-ic"><svg class="i" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div><h4>{{web_flow_3_h}}</h4><p>{{web_flow_3_p}}</p></div></li>
+        <li><span class="fl-ic"><svg class="i" viewBox="0 0 24 24"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5.1 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.5-6.9A2 2 0 0 0 16.8 4H7.2a2 2 0 0 0-1.7 1.1z"/></svg></span><div><h4>{{web_flow_4_h}}</h4><p>{{web_flow_4_p}}</p></div></li>
+      </ol>
+      <p class="flow-note"><svg class="i" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>{{web_flow_note}}</p>
+      </div>
+      <div class="web-vis site-vis reveal">
+        <div class="browser">
+          <div class="browser-bar"><i></i><i></i><i></i><span>baylight.banaroo.app</span></div>
+          <img src="/img/site-home.webp" width="1280" height="766" alt="{{web_alt}}">
+        </div>
+        <div class="mini-phone lp" id="langanim">
+            <div class="lp-scr">
+              <div class="lp-v v-en" lang="en">
+                <div class="lp-top"><span class="lp-brand">≋ <i>Bay</i> light</span><span class="lp-pill">EN ▾</span></div>
+                <div class="lp-hero"><b>Homes by the sea, picked for you</b><span class="lp-tabs"><em>Buy</em><em>Rent</em></span></div>
+                <div class="lp-card"><span class="lp-ph"></span><div><b>Horizon Tower</b><small>1 bed · 32 m²</small><i>$78K</i></div></div>
+                <span class="lp-btn">View homes</span>
+              </div><div class="lp-v v-ru" lang="ru">
+                <div class="lp-top"><span class="lp-brand">≋ <i>Bay</i> light</span><span class="lp-pill">RU ▾</span></div>
+                <div class="lp-hero"><b>Дома у моря, подобранные для вас</b><span class="lp-tabs"><em>Купить</em><em>Аренда</em></span></div>
+                <div class="lp-card"><span class="lp-ph"></span><div><b>Horizon Tower</b><small>1 спальня · 32 м²</small><i>$78K</i></div></div>
+                <span class="lp-btn">Смотреть объекты</span>
+              </div><div class="lp-v v-zh" lang="zh">
+                <div class="lp-top"><span class="lp-brand">≋ <i>Bay</i> light</span><span class="lp-pill">中文 ▾</span></div>
+                <div class="lp-hero"><b>为您精选的海边好房</b><span class="lp-tabs"><em>买房</em><em>租房</em></span></div>
+                <div class="lp-card"><span class="lp-ph"></span><div><b>Horizon Tower</b><small>1 卧 · 32 m²</small><i>$78K</i></div></div>
+                <span class="lp-btn">查看房源</span>
+              </div>
+              <div class="lp-menu"><span data-l="0">English</span><span data-l="1">Русский</span><span data-l="2">中文</span></div>
+            </div>
+            <span class="lp-tap"></span>
+          </div>
+      </div>
+    </div>
+    <div class="grid6">
+      <div class="cell reveal"><svg class="i ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></svg><h4>{{web_g1_h}}</h4><p>{{web_g1_p}}</p></div>
+      <div class="cell reveal"><svg class="i ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><h4>{{web_g2_h}}</h4><p>{{web_g2_p}}</p></div>
+      <div class="cell reveal"><svg class="i ic" viewBox="0 0 24 24"><path d="M4 21V8l6-4v17M10 21V10l10 3v8M3 21h18"/></svg><h4>{{web_g3_h}}</h4><p>{{web_g3_p}}</p></div>
+      <div class="cell reveal"><svg class="i ic" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg><h4>{{web_g4_h}}</h4><p>{{web_g4_p}}</p></div>
+      <div class="cell reveal"><svg class="i ic" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2a10 10 0 0 0 0 20c1 0 1.5-.8 1.5-1.6 0-.4-.2-.8-.4-1.1-.3-.3-.4-.7-.4-1.1 0-.9.7-1.6 1.6-1.6H16a6 6 0 0 0 6-6c0-4.9-4.5-8.6-10-8.6z"/></svg><h4>{{web_g5_h}}</h4><p>{{web_g5_p}}</p></div>
+      <div class="cell reveal"><svg class="i ic" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg><h4>{{web_g6_h}}</h4><p>{{web_g6_p}}</p></div>
+    </div>
+    <div class="site-foot reveal">
+      <p><b>{{web_inc_b}}</b> {{web_inc}}</p>
+      <div class="site-links">
+        <a class="btn btn-primary" href="{{site_url}}" target="_blank" rel="noopener">{{web_link}} <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="btn btn-outline-light" href="{{demo_url}}" target="_blank" rel="noopener">{{web_link_crm}} <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CUSTOM -->
 <section class="sec">
   <div class="wrap">
@@ -346,25 +372,28 @@
     <div class="plans">
       <div class="plan reveal">
         <h3>{{plan_start}}</h3><p class="plan-for">{{plan_start_for}}</p>
+        <p class="seats"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>{{plan_start_seats}}</p>
         <div class="price"><b>{{plan_start_price}}</b><span>{{per_month}}</span></div>
-        <p class="usd">{{plan_start_usd}}</p>
-        <a class="btn btn-ghost btn-block" href="#book" data-plan="Start">{{plan_cta}}</a>
+        <p class="yearly">{{year_or}} <b>{{plan_start_year}}</b> {{per_year}} <em>{{year_free}}</em></p>
+        <a class="btn btn-ghost btn-block" href="#start" data-plan="Start">{{plan_cta}}</a>
         <ul class="ticks"><li>{{plan_start_1}}</li><li>{{plan_start_2}}</li><li>{{plan_start_3}}</li><li>{{plan_start_4}}</li><li>{{plan_start_5}}</li></ul>
       </div>
       <div class="plan plan-hot reveal">
         <span class="badge">{{plan_popular}}</span>
         <h3>{{plan_growth}}</h3><p class="plan-for">{{plan_growth_for}}</p>
+        <p class="seats"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>{{plan_growth_seats}}</p>
         <div class="price"><b>{{plan_growth_price}}</b><span>{{per_month}}</span></div>
-        <p class="usd">{{plan_growth_usd}}</p>
-        <a class="btn btn-primary btn-block" href="#book" data-plan="Growth">{{plan_cta}}</a>
+        <p class="yearly">{{year_or}} <b>{{plan_growth_year}}</b> {{per_year}} <em>{{year_free}}</em></p>
+        <a class="btn btn-primary btn-block" href="#start" data-plan="Growth">{{plan_cta}}</a>
         <p class="plan-plus">{{plan_growth_0}}</p>
         <ul class="ticks"><li>{{plan_growth_1}}</li><li>{{plan_growth_2}}</li><li>{{plan_growth_3}}</li></ul>
       </div>
       <div class="plan reveal">
         <h3>{{plan_pro}}</h3><p class="plan-for">{{plan_pro_for}}</p>
+        <p class="seats"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>{{plan_pro_seats}}</p>
         <div class="price"><b>{{plan_pro_price}}</b><span>{{per_month}}</span></div>
-        <p class="usd">{{plan_pro_usd}}</p>
-        <a class="btn btn-ghost btn-block" href="#book" data-plan="Pro">{{plan_cta}}</a>
+        <p class="yearly">{{year_or}} <b>{{plan_pro_year}}</b> {{per_year}} <em>{{year_free}}</em></p>
+        <a class="btn btn-ghost btn-block" href="#start" data-plan="Pro">{{plan_cta}}</a>
         <p class="plan-plus">{{plan_pro_0}}</p>
         <ul class="ticks"><li>{{plan_pro_1}}</li><li>{{plan_pro_2}}</li><li>{{plan_pro_3}}</li></ul>
       </div>
@@ -388,13 +417,15 @@
       <details><summary>{{faq_5_q}}</summary><p>{{faq_5_a}}</p></details>
       <details><summary>{{faq_6_q}}</summary><p>{{faq_6_a}}</p></details>
       <details><summary>{{faq_7_q}}</summary><p>{{faq_7_a}}</p></details>
+      <details><summary>{{faq_10_q}}</summary><p>{{faq_10_a}}</p></details>
       <details><summary>{{faq_8_q}}</summary><p>{{faq_8_a}}</p></details>
+      <details><summary>{{faq_9_q}}</summary><p>{{faq_9_a}}</p></details>
     </div>
   </div>
 </section>
 
 <!-- BOOK -->
-<section class="sec book" id="book">
+<section class="sec book" id="start">
   <div class="wrap book-in">
     <div class="book-copy">
       <h2>{{cta_h2}}</h2>
@@ -405,29 +436,47 @@
       </div>
       <p class="contact-or">{{contact_or}}</p>
       <div class="contacts">
-        <a class="chip chip-line" id="c-line" href="#book"><i>L</i>{{contact_line}} <small>{{contact_soon}}</small></a>
-        <a class="chip chip-wa" id="c-wa" href="#book"><i>W</i>{{contact_wa}} <small>{{contact_soon}}</small></a>
+        <a class="chip chip-line" id="c-line" href="#start"><i>L</i>{{contact_line}} <small>{{contact_soon}}</small></a>
+        <a class="chip chip-wa" id="c-wa" href="#start"><i>W</i>{{contact_wa}} <small>{{contact_soon}}</small></a>
       </div>
     </div>
-    <form class="form" name="demo-request" method="POST" data-netlify="true" netlify-honeypot="company_site" id="demo-form">
-      <input type="hidden" name="form-name" value="demo-request">
+    <form class="form" name="get-started" method="POST" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="company_site" id="start-form">
+      <input type="hidden" name="form-name" value="get-started">
       <input type="hidden" name="page_lang" value="{{lang}}">
       <p class="hp"><label>Leave empty <input name="company_site" tabindex="-1" autocomplete="off"></label></p>
-      <label><span>{{form_name}}</span><input name="name" required autocomplete="name"></label>
-      <label><span>{{form_agency}}</span><input name="agency" required autocomplete="organization"></label>
-      <label><span>{{form_phone}}</span><input name="contact" required autocomplete="tel"></label>
       <div class="form-2">
-        <label><span>{{form_city}}</span><input name="city" placeholder="{{form_city_ph}}"></label>
-        <label><span>{{form_plan}}</span>
-          <select name="plan" id="plan-select">
-            <option value="Not sure">{{form_plan_any}}</option>
-            <option value="Start">Start · {{plan_start_price}}</option>
-            <option value="Growth">Growth · {{plan_growth_price}}</option>
-            <option value="Pro">Pro · {{plan_pro_price}}</option>
-          </select>
-        </label>
+        <label><span>{{form_name}}</span><input name="name" required autocomplete="name"></label>
+        <label><span>{{form_agency}}</span><input name="agency" required autocomplete="organization"></label>
       </div>
-      <label><span>{{form_msg}}</span><textarea name="message" rows="3"></textarea></label>
+      <div class="form-2">
+        <label><span>{{form_phone}}</span><input name="contact" required autocomplete="tel"></label>
+        <label><span>{{form_city}}</span><input name="city" required placeholder="{{form_city_ph}}"></label>
+      </div>
+      <label><span>{{form_plan}}</span>
+        <select name="plan" id="plan-select">
+          <option value="Not sure">{{form_plan_any}}</option>
+          <option value="Start">Start · {{plan_start_price}}</option>
+          <option value="Growth">Growth · {{plan_growth_price}}</option>
+          <option value="Pro">Pro · {{plan_pro_price}}</option>
+        </select>
+      </label>
+      <details class="more">
+        <summary>{{form_more}}</summary>
+        <div class="more-in">
+          <div class="form-2">
+            <label><span>{{form_email}}</span><input name="email" type="email" autocomplete="email"></label>
+            <label><span>{{form_size}}</span><input name="team_size" type="number" min="1" inputmode="numeric"></label>
+          </div>
+          <label><span>{{form_site}}</span><input name="website" autocomplete="url" inputmode="url"></label>
+          <label><span>{{form_groups}}</span><textarea name="facebook_groups" rows="2" placeholder="{{form_groups_ph}}"></textarea></label>
+          <div class="form-2">
+            <label><span>{{form_logo}}</span><input name="logo" type="file" accept="image/*,.svg,.pdf"></label>
+            <label><span>{{form_listings}}</span><input name="listings" type="file" accept=".xlsx,.xls,.csv,.ods,.numbers,.pdf"></label>
+          </div>
+          <p class="files-note" id="files-note">{{form_files_note}}</p>
+          <label><span>{{form_msg}}</span><textarea name="message" rows="2"></textarea></label>
+        </div>
+      </details>
       <button class="btn btn-primary btn-lg btn-block" type="submit">{{form_submit}}</button>
       <p class="micro">{{form_note}}</p>
       <div class="thanks" hidden><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><h3>{{form_thanks_h}}</h3><p>{{form_thanks_p}}</p></div>
@@ -458,7 +507,7 @@
 
 <div class="mbar" id="mbar">
   <a class="btn btn-ghost" href="#main">{{nav_demo}}</a>
-  <a class="btn btn-primary" href="#book">{{nav_book}}</a>
+  <a class="btn btn-primary" href="#start">{{nav_book}}</a>
 </div>
 
 <script>

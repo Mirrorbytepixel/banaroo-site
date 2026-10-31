@@ -3,7 +3,7 @@
 
   // Sticky nav border
   var nav = document.getElementById('nav');
-  var mbar = document.getElementById('mbar'), book = document.getElementById('book');
+  var mbar = document.getElementById('mbar'), book = document.getElementById('start');
   var onScroll = function () {
     nav.classList.toggle('scrolled', window.scrollY > 8);
     if (mbar && book) {
@@ -102,7 +102,7 @@
   // Lead-bot animation
   var ba = document.getElementById('botanim');
   if (ba) {
-    var btap = ba.querySelector('.ba-tap'), bbase = ba.className, bi = 0, btimer = null, brun = false;
+    var btap = ba.querySelector('.ba-tap'), bbase = ba.className, bi = 0, btimer = null, brun = false, bsrc = '';
     // [classes, tap x%, tap y%, press?, ms]
     var bseq = [
       ['', 88, 110, 0, 500],
@@ -119,14 +119,14 @@
     ];
     var bshow = function () {
       var st = bseq[bi];
-      ba.className = bbase + ' ' + st[0];
+      ba.className = bbase + bsrc + ' ' + st[0];
       var c = ba.querySelector('.ba-claim');
       var y = st[2];
       if (y === 0 && c) { var r = c.getBoundingClientRect(), R = ba.getBoundingClientRect(); y = ((r.top + r.height / 2 - R.top) / R.height) * 100; }
       btap.style.setProperty('--tx', st[1] + '%'); btap.style.setProperty('--ty', y + '%');
       btap.style.opacity = st[2] > 100 ? 0 : 1;
       btap.classList.remove('press'); if (st[3]) { void btap.offsetWidth; btap.classList.add('press'); }
-      btimer = setTimeout(function () { bi = (bi + 1) % bseq.length; if (brun) bshow(); }, st[4]);
+      btimer = setTimeout(function () { bi = (bi + 1) % bseq.length; if (bi === 0) bsrc = bsrc ? '' : ' tg'; if (brun) bshow(); }, st[4]);
     };
     if (reduce) { ba.className = bbase + ' post m k1 k2'; }
     else if ('IntersectionObserver' in window) {
@@ -196,14 +196,23 @@
     }
   });
 
-  // Netlify form via fetch, then show thanks
-  var form = document.getElementById('demo-form');
+  // Get started form: Netlify form with files, sent via fetch, then show thanks
+  var form = document.getElementById('start-form');
   if (form) {
+    var note = document.getElementById('files-note'), MAX = 8 * 1024 * 1024;
+    var tooBig = function () {
+      var total = 0;
+      form.querySelectorAll('input[type=file]').forEach(function (f) { if (f.files && f.files[0]) total += f.files[0].size; });
+      return total > MAX;
+    };
+    form.querySelectorAll('input[type=file]').forEach(function (f) {
+      f.addEventListener('change', function () { if (note) note.classList.toggle('warn', tooBig()); });
+    });
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (tooBig()) { if (note) { note.classList.add('warn'); note.scrollIntoView({ block: 'center' }); } return; }
       var btn = form.querySelector('button[type=submit]'); btn.disabled = true;
-      var body = new URLSearchParams(new FormData(form)).toString();
-      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
+      fetch('/', { method: 'POST', body: new FormData(form) })
         .then(function (r) { if (!r.ok) throw new Error(r.status); form.querySelector('.thanks').hidden = false; })
         .catch(function () { btn.disabled = false; form.submit(); });
     });
