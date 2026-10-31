@@ -199,7 +199,7 @@ EN = {
 
 "price_eyebrow": "Pricing",
 "price_h2": "Simple monthly plans. No surprises.",
-"price_sub": "Prices per agency, per month. Our first 10 agencies pay no setup fee (we do your branding, website and listing import) and keep these prices for 12 months.",
+"price_sub": "Prices per agency, per month. Launch offer until 31 January 2027: no setup fee (we do your branding, website and listing import), and your price is locked for 12 months.",
 "per_month": "/ month",
 "year_or": "or",
 "per_year": "a year",
@@ -493,7 +493,7 @@ TH = {
 
 "price_eyebrow": "ราคา",
 "price_h2": "แพ็กเกจรายเดือนที่เข้าใจง่าย ไม่มีค่าใช้จ่ายแอบแฝง",
-"price_sub": "ราคาต่อเอเจนซี่ต่อเดือน 10 เอเจนซี่แรกไม่มีค่าติดตั้ง (เราทำแบรนด์ เว็บไซต์ และย้ายข้อมูลทรัพย์ให้) และล็อกราคานี้ไว้ 12 เดือน",
+"price_sub": "ราคาต่อเอเจนซี่ต่อเดือน โปรเปิดตัวถึง 31 มกราคม 2570: ไม่มีค่าติดตั้ง (เราทำแบรนด์ เว็บไซต์ และย้ายข้อมูลทรัพย์ให้) และล็อกราคาไว้ 12 เดือน",
 "per_month": "/ เดือน",
 "year_or": "หรือ",
 "per_year": "ต่อปี",
