@@ -495,6 +495,12 @@ section[id]{scroll-margin-top:76px}
 .ba-fb b{color:#1c1e21;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ba-fb small{white-space:nowrap}
 .ba-f{width:18px;height:18px;border-radius:50%;background:#1877F2;color:#fff;font:800 13px/18px Arial,sans-serif;text-align:center;flex:none}
+.ba-tg{background:#229ED9;align-items:center;justify-content:center}
+.ba-tg svg{width:11px;height:11px;fill:#fff;margin-left:-1px}
+.ba-s2{display:none}
+.ba.tg .ba-s1{display:none}
+.ba.tg .ba-s2{display:block}
+.ba.tg .ba-tg{display:flex}
 .ba-who{display:flex;align-items:center;gap:7px;margin:7px 0 5px;font-size:13.5px}
 .ba-av{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#FFB547,#F2451F);color:#fff;font:700 11px/22px var(--sans,Inter),sans-serif;text-align:center}
 .ba .ba-txt{font-size:13.5px;line-height:1.45;margin:0;color:#1c1e21}

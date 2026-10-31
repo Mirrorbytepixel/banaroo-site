@@ -102,7 +102,7 @@
   // Lead-bot animation
   var ba = document.getElementById('botanim');
   if (ba) {
-    var btap = ba.querySelector('.ba-tap'), bbase = ba.className, bi = 0, btimer = null, brun = false;
+    var btap = ba.querySelector('.ba-tap'), bbase = ba.className, bi = 0, btimer = null, brun = false, bsrc = '';
     // [classes, tap x%, tap y%, press?, ms]
     var bseq = [
       ['', 88, 110, 0, 500],
@@ -119,14 +119,14 @@
     ];
     var bshow = function () {
       var st = bseq[bi];
-      ba.className = bbase + ' ' + st[0];
+      ba.className = bbase + bsrc + ' ' + st[0];
       var c = ba.querySelector('.ba-claim');
       var y = st[2];
       if (y === 0 && c) { var r = c.getBoundingClientRect(), R = ba.getBoundingClientRect(); y = ((r.top + r.height / 2 - R.top) / R.height) * 100; }
       btap.style.setProperty('--tx', st[1] + '%'); btap.style.setProperty('--ty', y + '%');
       btap.style.opacity = st[2] > 100 ? 0 : 1;
       btap.classList.remove('press'); if (st[3]) { void btap.offsetWidth; btap.classList.add('press'); }
-      btimer = setTimeout(function () { bi = (bi + 1) % bseq.length; if (brun) bshow(); }, st[4]);
+      btimer = setTimeout(function () { bi = (bi + 1) % bseq.length; if (bi === 0) bsrc = bsrc ? '' : ' tg'; if (brun) bshow(); }, st[4]);
     };
     if (reduce) { ba.className = bbase + ' post m k1 k2'; }
     else if ('IntersectionObserver' in window) {
