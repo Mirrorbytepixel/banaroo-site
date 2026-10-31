@@ -221,15 +221,48 @@
         <span class="tag tag-mango"><svg class="i" viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>{{send_tag}}</span>
         <h3>{{send_h3}}</h3>
         <p>{{send_p}}</p>
-        <div class="sheet">
-          <b>{{send_sheet}}</b>
-          <div class="sheet-thumbs"><i class="t1"></i><i class="t2"></i><i class="t3"></i></div>
-          <div class="sheet-apps">
-            <span><i class="a-line">L</i>{{send_line}}</span>
-            <span><i class="a-wa">W</i>{{send_wa}}</span>
-            <span><i class="a-wc">微</i>{{send_wechat}}</span>
-            <span><i class="a-cp"><svg class="i" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg></i>{{send_copy}}</span>
+        <div class="sa" id="sendanim" data-step="0" aria-label="{{send_h3}}" role="img">
+          <div class="sa-phone">
+            <div class="sa-notch"></div>
+            <!-- screen 1: agent picks homes -->
+            <div class="sa-vp">
+            <div class="sa-scr sa-pick">
+              <div class="sa-bar"><b>{{sa_pick_title}}</b><span class="sa-count"><i>0</i>/3</span></div>
+              <div class="sa-row" data-n="1"><span class="ph p1"></span><span class="sa-t"><b>{{sa_l1_name}}</b><small>{{sa_l1_meta}}</small></span><span class="sa-chk"></span></div>
+              <div class="sa-row" data-n="2"><span class="ph p2"></span><span class="sa-t"><b>{{sa_l2_name}}</b><small>{{sa_l2_meta}}</small></span><span class="sa-chk"></span></div>
+              <div class="sa-row" data-n="3"><span class="ph p3"></span><span class="sa-t"><b>{{sa_l3_name}}</b><small>{{sa_l3_meta}}</small></span><span class="sa-chk"></span></div>
+              <div class="sa-send"><svg class="i" viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>{{sa_send_btn}}</div>
+              <div class="sa-sheet">
+                <b>{{send_sheet}}</b>
+                <div class="sheet-apps">
+                  <span class="sa-line"><i class="a-line">L</i>{{send_line}}</span>
+                  <span><i class="a-wa">W</i>{{send_wa}}</span>
+                  <span><i class="a-wc">微</i>{{send_wechat}}</span>
+                  <span><i class="a-cp"><svg class="i" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg></i>{{send_copy}}</span>
+                </div>
+              </div>
+            </div>
+            <!-- screen 2: client chat -->
+            <div class="sa-scr sa-chat">
+              <div class="sa-chathead"><span class="sa-av">A</span><b>Alex · Baylight</b></div>
+              <div class="sa-msg">{{sa_chat_msg}}</div>
+              <div class="sa-link"><span class="sa-link-img"><span class="ph p1"></span><span class="ph p2"></span><span class="ph p3"></span></span><b>{{sa_link_title}}</b><small>baylight.banaroo.app</small></div>
+            </div>
+            <!-- screen 3: branded shortlist page -->
+            <div class="sa-scr sa-page">
+              <div class="sa-brand"><span class="sa-logo">≋</span><i>Bay</i>light</div>
+              <small class="sa-for">{{sa_page_kicker}}</small>
+              <b class="sa-h">{{sa_page_title}}</b>
+              <div class="sa-cards">
+                <div class="sa-card"><span class="ph p1"></span><b>{{sa_l1_name}}</b><small>{{sa_l1_meta}}</small></div>
+                <div class="sa-card"><span class="ph p2"></span><b>{{sa_l2_name}}</b><small>{{sa_l2_meta}}</small></div>
+              </div>
+              <div class="sa-cta">{{sa_page_cta}}</div>
+            </div>
+            </div>
+            <span class="sa-tap"></span>
           </div>
+          <ol class="sa-steps"><li>{{sa_step_1}}</li><li>{{sa_step_2}}</li><li>{{sa_step_3}}</li></ol>
         </div>
       </div>
     </div>

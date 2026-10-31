@@ -52,6 +52,53 @@
     if (!reduce) setInterval(push, 3200);
   }
 
+  // Send-to-client animation
+  var sa = document.getElementById('sendanim');
+  if (sa) {
+    var tap = sa.querySelector('.sa-tap'), steps = sa.querySelectorAll('.sa-steps li');
+    // [classes on, tap x%, tap y%, press?, phase, duration ms]
+    var seq = [
+      ['', 70, 115, 0, 0, 700],
+      ['', 84, 26, 0, 0, 450],
+      ['has1', 84, 26, 1, 0, 550],
+      ['has1', 84, 43, 0, 0, 380],
+      ['has1 has2', 84, 43, 1, 0, 550],
+      ['has1 has2', 84, 60, 0, 0, 380],
+      ['has1 has2 has3', 84, 60, 1, 0, 650],
+      ['has1 has2 has3', 50, 90, 0, 1, 420],
+      ['has1 has2 has3', 50, 90, 1, 1, 380],
+      ['has1 has2 has3 sheet', 22, 84, 0, 1, 700],
+      ['has1 has2 has3 sheet line', 22, 84, 1, 1, 600],
+      ['chat', 60, 120, 0, 2, 500],
+      ['chat msg', 60, 120, 0, 2, 800],
+      ['chat msg link', 66, 62, 0, 2, 900],
+      ['chat msg link', 66, 62, 1, 2, 450],
+      ['page', 60, 120, 0, 2, 1500],
+      ['page', 50, 92, 0, 2, 500],
+      ['page cta', 50, 92, 1, 2, 1500]
+    ];
+    var base = sa.className, i = 0, timer = null, running = false;
+    var show = function () {
+      var st = seq[i];
+      sa.className = base + ' ' + st[0];
+      tap.style.setProperty('--tx', st[1] + '%'); tap.style.setProperty('--ty', st[2] + '%');
+      tap.style.opacity = st[2] > 100 ? 0 : 1;
+      tap.classList.remove('press'); if (st[3]) { void tap.offsetWidth; tap.classList.add('press'); }
+      steps.forEach(function (li, k) { li.classList.toggle('on', k === st[4]); });
+      sa.querySelector('.sa-count i').textContent = (st[0].match(/has\d/g) || []).length;
+      timer = setTimeout(function () { i = (i + 1) % seq.length; if (running) show(); }, st[5]);
+    };
+    if (reduce) { i = 15; show(); clearTimeout(timer); }
+    else if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting && !running) { running = true; show(); }
+          else if (!e.isIntersecting && running) { running = false; clearTimeout(timer); }
+        });
+      }, { threshold: 0.3 }).observe(sa);
+    } else { running = true; show(); }
+  }
+
   // Plan buttons preselect the form
   var sel = document.getElementById('plan-select');
   document.querySelectorAll('[data-plan]').forEach(function (a) {
