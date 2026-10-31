@@ -369,5 +369,34 @@ h2.center,.sub.center,p.center{text-align:center;margin-left:auto;margin-right:a
 
 h1 em,h2,h3{text-wrap:balance}
 section[id]{scroll-margin-top:76px}
-.menu-lang{display:none!important}
-@media (max-width:420px){.nav-actions .lang{display:none}.menu-lang{display:flex!important}.brand{font-size:21px}}
+@media (max-width:420px){.lang-pop{display:none}.brand{font-size:21px}}
+
+/* ---- languages ---- */
+.lang{display:inline-flex;align-items:center;gap:6px;cursor:pointer}
+.lang .i{width:15px;height:15px}
+.lang-menu{min-width:170px}
+.lang-menu a,.menu-langs a,.foot-langs a{font-weight:500}
+.lang-menu a[aria-current],.menu-langs a[aria-current]{background:var(--paper);font-weight:700}
+.lang-menu a[aria-current]::after{content:"✓";margin-left:auto;color:var(--mango-2)}
+.menu-langs{display:none;grid-template-columns:1fr 1fr;gap:2px;border-top:1px solid var(--line);margin-top:6px;padding-top:6px}
+.menu-langs a{padding:8px 12px;font-size:14px}
+@media (max-width:420px){.menu-langs{display:grid}}
+.foot-langs{display:flex;gap:6px;flex-wrap:wrap;align-content:flex-start}
+.foot-langs a{font-size:13.5px;text-decoration:none;border:1px solid var(--night-line);border-radius:999px;padding:5px 11px;color:#BDB7CF}
+.foot-langs a:hover,.foot-langs a[aria-current]{color:#fff;border-color:#5a5275}
+.lang-ru{--display:"Inter",system-ui,sans-serif;--serif:"Lora",Georgia,serif}
+.lang-ru h1,.lang-ru h2,.lang-ru h3,.lang-ru h4{letter-spacing:-.035em;font-weight:800}
+.lang-ru h1{font-size:clamp(38px,5.2vw,66px)}
+.lang-ru .brand,.lang-zh .brand,.lang-th .brand{font-family:"Bricolage Grotesque",sans-serif}
+.lang-zh{--display:"Inter","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif;--serif:var(--display);--body:"Inter","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif}
+.lang-zh h1,.lang-zh h2,.lang-zh h3,.lang-zh h4{letter-spacing:0;line-height:1.25;font-weight:700}
+.lang-zh h1 em{font-style:normal;font-weight:800}
+.lang-zh .eyebrow,.lang-zh .feed-head,.lang-zh .vs-head span,.lang-zh .dc-txt small,.lang-ru .dc-txt small{letter-spacing:.02em}
+
+.micro{flex-wrap:wrap}
+.mbar{display:none}
+@media (max-width:700px){
+  .mbar{display:grid;grid-template-columns:1fr 1.3fr;gap:8px;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:55;padding:8px;border-radius:999px;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);box-shadow:0 18px 40px -16px rgba(21,19,31,.4);transform:translateY(140%);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+  .mbar.on{transform:none}
+  .mbar .btn{padding:.75em 1em}
+}

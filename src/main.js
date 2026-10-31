@@ -3,7 +3,14 @@
 
   // Sticky nav border
   var nav = document.getElementById('nav');
-  var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
+  var mbar = document.getElementById('mbar'), book = document.getElementById('book');
+  var onScroll = function () {
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+    if (mbar && book) {
+      var show = window.scrollY > 640 && book.getBoundingClientRect().top > window.innerHeight * 0.6;
+      mbar.classList.toggle('on', show);
+    }
+  };
   window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
   // Reveal on scroll

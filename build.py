@@ -1,6 +1,8 @@
 import html, os, re, shutil, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from strings import EN, TH
+from strings_ru import RU
+from strings_zh import ZH
 
 CONFIG = {
   "demo_url": "https://demo.banaroo.app",
@@ -14,18 +16,37 @@ tpl = open(os.path.join(ROOT, "template.html"), encoding="utf-8").read()
 
 shutil.rmtree(OUT, ignore_errors=True)
 shutil.copytree(os.path.join(ROOT, "src"), OUT)
-assert set(EN) == set(TH), set(EN) ^ set(TH)
+LANGS = [  # code, menu label, path, strings
+  ("en", "English", "/", EN),
+  ("th", "ภาษาไทย", "/th/", TH),
+  ("ru", "Русский", "/ru/", RU),
+  ("zh", "中文", "/zh/", ZH),
+]
+for code, _, _, d in LANGS:
+    missing, extra = set(EN) - set(d), set(d) - set(EN)
+    assert not missing and not extra, (code, missing, extra)
 
-for strings, path in ((EN, "/"), (TH, "/th/")):
+hreflangs = "\n".join(f'<link rel="alternate" hreflang="{c}" href="https://banaroo.app{p}">' for c, _, p, _ in LANGS)
+hreflangs += '\n<link rel="alternate" hreflang="x-default" href="https://banaroo.app/">'
+
+for code, label, path, strings in LANGS:
     vals = dict(strings, **CONFIG)
     vals["self_path"] = path
     vals["home_href"] = path
-    vals["lang_switch_short_lc"] = strings["lang_switch_short"].lower()
+    vals["lang_code_upper"] = {"zh": "中文"}.get(code, code.upper())
+    raw = {
+      "hreflangs": hreflangs,
+      "lang_menu": "".join(
+        f'<a href="{p}" hreflang="{c}" lang="{c}"{" aria-current=\"true\"" if c == code else ""}>{html.escape(l)}</a>'
+        for c, l, p, _ in LANGS),
+    }
     def sub(m):
-        k = m.group(1)
+        k = m.group(1) or m.group(2)
+        if m.group(1):
+            return raw[k]
         if k not in vals: raise KeyError(k)
         return html.escape(vals[k], quote=True)
-    out = re.sub(r"\{\{(\w+)\}\}", sub, tpl)
+    out = re.sub(r"\{\{\{(\w+)\}\}\}|\{\{(\w+)\}\}", sub, tpl)
     d = os.path.join(OUT, path.strip("/"))
     os.makedirs(d, exist_ok=True)
     open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(out)
@@ -35,6 +56,8 @@ open(os.path.join(OUT, "sitemap.xml"), "w").write("""<?xml version="1.0" encodin
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://banaroo.app/</loc></url>
 <url><loc>https://banaroo.app/th/</loc></url>
+<url><loc>https://banaroo.app/ru/</loc></url>
+<url><loc>https://banaroo.app/zh/</loc></url>
 </urlset>
 """)
 open(os.path.join(OUT, "_headers"), "w").write("""/img/*

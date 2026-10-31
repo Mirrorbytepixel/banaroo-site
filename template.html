@@ -6,9 +6,7 @@
 <title>{{title}}</title>
 <meta name="description" content="{{meta_desc}}">
 <link rel="canonical" href="https://banaroo.app{{self_path}}">
-<link rel="alternate" hreflang="en" href="https://banaroo.app/">
-<link rel="alternate" hreflang="th" href="https://banaroo.app/th/">
-<link rel="alternate" hreflang="x-default" href="https://banaroo.app/">
+{{{hreflangs}}}
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{og_title}}">
 <meta property="og:description" content="{{meta_desc}}">
@@ -21,7 +19,7 @@
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=Anuphan:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=Anuphan:wght@400;500;600;700&family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body class="lang-{{lang}}">
@@ -39,7 +37,10 @@
       <a href="#faq">{{nav_faq}}</a>
     </nav>
     <div class="nav-actions">
-      <a class="lang" href="{{lang_switch_href}}" hreflang="{{lang_switch_short_lc}}" title="{{lang_switch_label}}">{{lang_switch_short}}</a>
+      <details class="pop lang-pop">
+        <summary class="lang" aria-label="Language"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>{{lang_code_upper}}</summary>
+        <div class="pop-menu lang-menu">{{{lang_menu}}}</div>
+      </details>
       <details class="pop nav-demo">
         <summary class="btn btn-ghost">{{nav_demo}} <svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
         <div class="pop-menu">
@@ -57,7 +58,7 @@
           <a href="#faq">{{nav_faq}}</a>
           <a href="{{demo_url}}" target="_blank" rel="noopener">{{demo_crm_t}} ↗</a>
           <a href="{{site_url}}" target="_blank" rel="noopener">{{demo_web_t}} ↗</a>
-          <a class="menu-lang" href="{{lang_switch_href}}">{{lang_switch_label}}</a>
+          <div class="menu-langs">{{{lang_menu}}}</div>
           <a class="btn btn-primary btn-block" href="#book">{{nav_book}}</a>
         </div>
       </details>
@@ -381,11 +382,17 @@
       <a href="#faq">{{nav_faq}}</a>
       <a href="{{demo_url}}" target="_blank" rel="noopener">{{foot_demo}}</a>
       <a href="{{site_url}}" target="_blank" rel="noopener">{{foot_site}}</a>
-      <a href="{{lang_switch_href}}">{{lang_switch_label}}</a>
+    </nav>
+    <nav class="foot-langs" aria-label="Languages">{{{lang_menu}}}
     </nav>
   </div>
   <div class="wrap foot-bottom">© <span id="yr">2026</span> {{foot_rights}}</div>
 </footer>
+
+<div class="mbar" id="mbar">
+  <a class="btn btn-ghost" href="#main">{{nav_demo}}</a>
+  <a class="btn btn-primary" href="#book">{{nav_book}}</a>
+</div>
 
 <script>
 window.BANAROO = { line: "{{line_url}}", whatsapp: "{{whatsapp_url}}" };
