@@ -263,7 +263,7 @@ EN = {
 "cta_p": "It takes a minute: who you are, where you work and which plan. We reply with your setup plan, and you're live within days.",
 "form_name": "Your name",
 "form_agency": "Agency name",
-"form_phone": "Phone, WhatsApp, Telegram or LINE",
+"form_phone": "WhatsApp, LINE or email",
 "form_city": "City",
 "form_city_ph": "Your city",
 "form_plan": "Plan",
@@ -286,6 +286,7 @@ EN = {
 "contact_line": "LINE us",
 "contact_wa": "WhatsApp",
 "contact_soon": "coming soon",
+"contact_note": "We reply in chat the same day. No calls to book.",
 
 "foot_tag": "The phone-first system for real estate agencies.",
 "foot_made": "Made by agents, for agents.",
@@ -556,7 +557,7 @@ TH = {
 "cta_p": "ใช้เวลาแค่นาทีเดียว บอกว่าคุณคือใคร ทำงานที่ไหน และสนใจแพ็กเกจไหน เราจะส่งแผนการตั้งค่ากลับไป และพร้อมใช้งานในไม่กี่วัน",
 "form_name": "ชื่อของคุณ",
 "form_agency": "ชื่อเอเจนซี่",
-"form_phone": "เบอร์โทร, LINE หรือ WhatsApp",
+"form_phone": "LINE, WhatsApp หรืออีเมล",
 "form_city": "เมือง",
 "form_city_ph": "ภูเก็ต",
 "form_plan": "แพ็กเกจ",
@@ -579,6 +580,7 @@ TH = {
 "contact_line": "ทัก LINE",
 "contact_wa": "WhatsApp",
 "contact_soon": "เร็วๆ นี้",
+"contact_note": "เราตอบทางแชทภายในวันเดียวกัน ไม่ต้องนัดโทร",
 
 "foot_tag": "ระบบสำหรับเอเจนซี่อสังหาฯ ที่ใช้งานบนมือถือ",
 "foot_made": "สร้างที่พัทยา ประเทศไทย",

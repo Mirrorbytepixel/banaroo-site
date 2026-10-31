@@ -285,6 +285,7 @@ h2.center,.sub.center,p.center{text-align:center;margin-left:auto;margin-right:a
 .book h2{color:#fff}
 .book .lead{color:rgba(255,255,255,.88);margin-bottom:28px}
 .contact-or{margin-top:30px;font-size:14px;color:rgba(255,255,255,.8);font-weight:600}
+.contact-note{margin-top:10px;font-size:13px;color:rgba(255,255,255,.65)}
 .contacts{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
 .chip{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);color:#fff;text-decoration:none;padding:8px 14px 8px 8px;border-radius:999px;font-weight:600;font-size:15px}
 .chip:hover{background:rgba(255,255,255,.22)}
