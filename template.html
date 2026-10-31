@@ -437,6 +437,7 @@
         <a class="chip chip-line" id="c-line" href="#start"><i>L</i>{{contact_line}} <small>{{contact_soon}}</small></a>
         <a class="chip chip-wa" id="c-wa" href="#start"><i>W</i>{{contact_wa}} <small>{{contact_soon}}</small></a>
       </div>
+      <p class="contact-note">{{contact_note}}</p>
     </div>
     <form class="form" name="get-started" method="POST" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="company_site" id="start-form">
       <input type="hidden" name="form-name" value="get-started">
@@ -447,7 +448,7 @@
         <label><span>{{form_agency}}</span><input name="agency" required autocomplete="organization"></label>
       </div>
       <div class="form-2">
-        <label><span>{{form_phone}}</span><input name="contact" required autocomplete="tel"></label>
+        <label><span>{{form_phone}}</span><input name="contact" required autocomplete="off"></label>
         <label><span>{{form_city}}</span><input name="city" required placeholder="{{form_city_ph}}"></label>
       </div>
       <label><span>{{form_plan}}</span>
