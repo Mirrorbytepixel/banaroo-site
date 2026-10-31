@@ -43,6 +43,7 @@
       shown.forEach(function (el, i) {
         el.querySelector('.ago').textContent = ago(minutes[i]);
         el.classList.toggle('old', i === MAX - 1);
+        el.classList.toggle('fresh', i === 0);
         el.querySelector('i').style.display = i === 0 ? '' : 'none';
         feed.appendChild(el);
       });
