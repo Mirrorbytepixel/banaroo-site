@@ -198,6 +198,10 @@
 
   // LINE / WhatsApp: real links once the accounts exist (set in build config)
   var cfg = window.BANAROO || {};
+  // Until the accounts exist, hide the chat buttons instead of showing 'coming soon'
+  if (!cfg.line && !cfg.whatsapp) {
+    document.querySelectorAll('.contact-or, .contacts').forEach(function (el) { el.hidden = true; });
+  }
   [['c-line', cfg.line], ['c-wa', cfg.whatsapp]].forEach(function (p) {
     var el = document.getElementById(p[0]);
     if (el && p[1]) {
