@@ -3,7 +3,7 @@
 
   // Sticky nav border
   var nav = document.getElementById('nav');
-  var mbar = document.getElementById('mbar'), book = document.getElementById('book');
+  var mbar = document.getElementById('mbar'), book = document.getElementById('start');
   var onScroll = function () {
     nav.classList.toggle('scrolled', window.scrollY > 8);
     if (mbar && book) {
@@ -196,14 +196,23 @@
     }
   });
 
-  // Netlify form via fetch, then show thanks
-  var form = document.getElementById('demo-form');
+  // Get started form: Netlify form with files, sent via fetch, then show thanks
+  var form = document.getElementById('start-form');
   if (form) {
+    var note = document.getElementById('files-note'), MAX = 8 * 1024 * 1024;
+    var tooBig = function () {
+      var total = 0;
+      form.querySelectorAll('input[type=file]').forEach(function (f) { if (f.files && f.files[0]) total += f.files[0].size; });
+      return total > MAX;
+    };
+    form.querySelectorAll('input[type=file]').forEach(function (f) {
+      f.addEventListener('change', function () { if (note) note.classList.toggle('warn', tooBig()); });
+    });
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (tooBig()) { if (note) { note.classList.add('warn'); note.scrollIntoView({ block: 'center' }); } return; }
       var btn = form.querySelector('button[type=submit]'); btn.disabled = true;
-      var body = new URLSearchParams(new FormData(form)).toString();
-      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
+      fetch('/', { method: 'POST', body: new FormData(form) })
         .then(function (r) { if (!r.ok) throw new Error(r.status); form.querySelector('.thanks').hidden = false; })
         .catch(function () { btn.disabled = false; form.submit(); });
     });

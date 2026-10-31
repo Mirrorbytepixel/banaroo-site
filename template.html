@@ -48,7 +48,7 @@
           <a href="{{site_url}}" target="_blank" rel="noopener"><span class="pm-ic pm-web"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><span><b>{{demo_web_t}}</b><small>{{demo_web_s}}</small></span></a>
         </div>
       </details>
-      <a class="btn btn-dark nav-book" href="#book">{{nav_book}}</a>
+      <a class="btn btn-dark nav-book" href="#start">{{nav_book}}</a>
       <details class="pop menu">
         <summary class="menu-btn" aria-label="Menu"><svg class="i" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
         <div class="pop-menu menu-panel">
@@ -59,7 +59,7 @@
           <a href="{{demo_url}}" target="_blank" rel="noopener">{{demo_crm_t}} ↗</a>
           <a href="{{site_url}}" target="_blank" rel="noopener">{{demo_web_t}} ↗</a>
           <div class="menu-langs">{{{lang_menu}}}</div>
-          <a class="btn btn-primary btn-block" href="#book">{{nav_book}}</a>
+          <a class="btn btn-primary btn-block" href="#start">{{nav_book}}</a>
         </div>
       </details>
     </div>
@@ -88,7 +88,7 @@
           <svg class="i dc-go" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
         </a>
       </div>
-      <p class="micro"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>{{hero_note}} <a href="#book">{{hero_cta_book}} →</a></p>
+      <p class="micro"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>{{hero_note}} <a href="#start">{{hero_cta_book}} →</a></p>
     </div>
 
     <div class="hero-visual">
@@ -348,7 +348,7 @@
         <h3>{{plan_start}}</h3><p class="plan-for">{{plan_start_for}}</p>
         <div class="price"><b>{{plan_start_price}}</b><span>{{per_month}}</span></div>
         <p class="usd">{{plan_start_usd}}</p>
-        <a class="btn btn-ghost btn-block" href="#book" data-plan="Start">{{plan_cta}}</a>
+        <a class="btn btn-ghost btn-block" href="#start" data-plan="Start">{{plan_cta}}</a>
         <ul class="ticks"><li>{{plan_start_1}}</li><li>{{plan_start_2}}</li><li>{{plan_start_3}}</li><li>{{plan_start_4}}</li><li>{{plan_start_5}}</li></ul>
       </div>
       <div class="plan plan-hot reveal">
@@ -356,7 +356,7 @@
         <h3>{{plan_growth}}</h3><p class="plan-for">{{plan_growth_for}}</p>
         <div class="price"><b>{{plan_growth_price}}</b><span>{{per_month}}</span></div>
         <p class="usd">{{plan_growth_usd}}</p>
-        <a class="btn btn-primary btn-block" href="#book" data-plan="Growth">{{plan_cta}}</a>
+        <a class="btn btn-primary btn-block" href="#start" data-plan="Growth">{{plan_cta}}</a>
         <p class="plan-plus">{{plan_growth_0}}</p>
         <ul class="ticks"><li>{{plan_growth_1}}</li><li>{{plan_growth_2}}</li><li>{{plan_growth_3}}</li></ul>
       </div>
@@ -364,7 +364,7 @@
         <h3>{{plan_pro}}</h3><p class="plan-for">{{plan_pro_for}}</p>
         <div class="price"><b>{{plan_pro_price}}</b><span>{{per_month}}</span></div>
         <p class="usd">{{plan_pro_usd}}</p>
-        <a class="btn btn-ghost btn-block" href="#book" data-plan="Pro">{{plan_cta}}</a>
+        <a class="btn btn-ghost btn-block" href="#start" data-plan="Pro">{{plan_cta}}</a>
         <p class="plan-plus">{{plan_pro_0}}</p>
         <ul class="ticks"><li>{{plan_pro_1}}</li><li>{{plan_pro_2}}</li><li>{{plan_pro_3}}</li></ul>
       </div>
@@ -389,12 +389,13 @@
       <details><summary>{{faq_6_q}}</summary><p>{{faq_6_a}}</p></details>
       <details><summary>{{faq_7_q}}</summary><p>{{faq_7_a}}</p></details>
       <details><summary>{{faq_8_q}}</summary><p>{{faq_8_a}}</p></details>
+      <details><summary>{{faq_9_q}}</summary><p>{{faq_9_a}}</p></details>
     </div>
   </div>
 </section>
 
 <!-- BOOK -->
-<section class="sec book" id="book">
+<section class="sec book" id="start">
   <div class="wrap book-in">
     <div class="book-copy">
       <h2>{{cta_h2}}</h2>
@@ -405,19 +406,24 @@
       </div>
       <p class="contact-or">{{contact_or}}</p>
       <div class="contacts">
-        <a class="chip chip-line" id="c-line" href="#book"><i>L</i>{{contact_line}} <small>{{contact_soon}}</small></a>
-        <a class="chip chip-wa" id="c-wa" href="#book"><i>W</i>{{contact_wa}} <small>{{contact_soon}}</small></a>
+        <a class="chip chip-line" id="c-line" href="#start"><i>L</i>{{contact_line}} <small>{{contact_soon}}</small></a>
+        <a class="chip chip-wa" id="c-wa" href="#start"><i>W</i>{{contact_wa}} <small>{{contact_soon}}</small></a>
       </div>
     </div>
-    <form class="form" name="demo-request" method="POST" data-netlify="true" netlify-honeypot="company_site" id="demo-form">
-      <input type="hidden" name="form-name" value="demo-request">
+    <form class="form" name="get-started" method="POST" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="company_site" id="start-form">
+      <input type="hidden" name="form-name" value="get-started">
       <input type="hidden" name="page_lang" value="{{lang}}">
       <p class="hp"><label>Leave empty <input name="company_site" tabindex="-1" autocomplete="off"></label></p>
-      <label><span>{{form_name}}</span><input name="name" required autocomplete="name"></label>
-      <label><span>{{form_agency}}</span><input name="agency" required autocomplete="organization"></label>
-      <label><span>{{form_phone}}</span><input name="contact" required autocomplete="tel"></label>
       <div class="form-2">
-        <label><span>{{form_city}}</span><input name="city" placeholder="{{form_city_ph}}"></label>
+        <label><span>{{form_name}}</span><input name="name" required autocomplete="name"></label>
+        <label><span>{{form_agency}}</span><input name="agency" required autocomplete="organization"></label>
+      </div>
+      <div class="form-2">
+        <label><span>{{form_email}}</span><input name="email" type="email" required autocomplete="email"></label>
+        <label><span>{{form_phone}}</span><input name="contact" required autocomplete="tel"></label>
+      </div>
+      <div class="form-2">
+        <label><span>{{form_city}}</span><input name="city" required placeholder="{{form_city_ph}}"></label>
         <label><span>{{form_plan}}</span>
           <select name="plan" id="plan-select">
             <option value="Not sure">{{form_plan_any}}</option>
@@ -427,7 +433,17 @@
           </select>
         </label>
       </div>
-      <label><span>{{form_msg}}</span><textarea name="message" rows="3"></textarea></label>
+      <div class="form-2">
+        <label><span>{{form_size}}</span><input name="team_size" type="number" min="1" inputmode="numeric"></label>
+        <label><span>{{form_site}}</span><input name="website" autocomplete="url" inputmode="url"></label>
+      </div>
+      <label><span>{{form_groups}}</span><textarea name="facebook_groups" rows="2" placeholder="{{form_groups_ph}}"></textarea></label>
+      <div class="form-2">
+        <label><span>{{form_logo}}</span><input name="logo" type="file" accept="image/*,.svg,.pdf"></label>
+        <label><span>{{form_listings}}</span><input name="listings" type="file" accept=".xlsx,.xls,.csv,.ods,.numbers,.pdf"></label>
+      </div>
+      <p class="files-note" id="files-note">{{form_files_note}}</p>
+      <label><span>{{form_msg}}</span><textarea name="message" rows="2"></textarea></label>
       <button class="btn btn-primary btn-lg btn-block" type="submit">{{form_submit}}</button>
       <p class="micro">{{form_note}}</p>
       <div class="thanks" hidden><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><h3>{{form_thanks_h}}</h3><p>{{form_thanks_p}}</p></div>
@@ -458,7 +474,7 @@
 
 <div class="mbar" id="mbar">
   <a class="btn btn-ghost" href="#main">{{nav_demo}}</a>
-  <a class="btn btn-primary" href="#book">{{nav_book}}</a>
+  <a class="btn btn-primary" href="#start">{{nav_book}}</a>
 </div>
 
 <script>
