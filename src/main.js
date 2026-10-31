@@ -139,6 +139,47 @@
     } else { brun = true; bshow(); }
   }
 
+  // Website language animation
+  var lp = document.getElementById('langanim');
+  if (lp) {
+    var ltap = lp.querySelector('.lp-tap'), lbase = lp.className, lcur = 0, lstep = 0, ltimer = null, lrun = false;
+    var opts = lp.querySelectorAll('.lp-menu span');
+    var at = function (el) {
+      var r = el.getBoundingClientRect(), R = lp.getBoundingClientRect();
+      return [((r.left + r.width / 2 - R.left) / R.width) * 100, ((r.top + r.height / 2 - R.top) / R.height) * 100];
+    };
+    var tapTo = function (el, press) {
+      if (!el) { ltap.style.opacity = 0; return; }
+      var xy = at(el); ltap.style.setProperty('--tx', xy[0] + '%'); ltap.style.setProperty('--ty', xy[1] + '%'); ltap.style.opacity = 1;
+      ltap.classList.remove('press'); if (press) { void ltap.offsetWidth; ltap.classList.add('press'); }
+    };
+    var lset = function (open, hl) {
+      lp.className = lbase + ' l' + lcur + (open ? ' open' : '');
+      opts.forEach(function (o, k) { o.classList.toggle('hl', k === hl); });
+    };
+    var ltick = function () {
+      var nxt = (lcur + 1) % 3, d = 600;
+      var pill = lp.querySelectorAll('.lp-pill')[lcur];
+      if (lstep === 0) { lset(false, -1); tapTo(null); d = 1900; }
+      else if (lstep === 1) { tapTo(pill, false); d = 450; }
+      else if (lstep === 2) { tapTo(pill, true); lset(true, -1); d = 500; }
+      else if (lstep === 3) { tapTo(opts[nxt], false); d = 400; }
+      else if (lstep === 4) { tapTo(opts[nxt], true); lset(true, nxt); d = 300; }
+      else { lcur = nxt; lset(false, -1); tapTo(null); d = 300; lstep = -1; }
+      lstep++;
+      ltimer = setTimeout(function () { if (lrun) ltick(); }, d);
+    };
+    lset(false, -1);
+    if (!reduce && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting && !lrun) { lrun = true; ltick(); }
+          else if (!e.isIntersecting && lrun) { lrun = false; clearTimeout(ltimer); }
+        });
+      }, { threshold: 0.4 }).observe(lp);
+    }
+  }
+
   // Plan buttons preselect the form
   var sel = document.getElementById('plan-select');
   document.querySelectorAll('[data-plan]').forEach(function (a) {
