@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{meta_desc}}">
+<link rel="canonical" href="https://banaroo.app{{self_path}}">
+<link rel="alternate" hreflang="en" href="https://banaroo.app/">
+<link rel="alternate" hreflang="th" href="https://banaroo.app/th/">
+<link rel="alternate" hreflang="x-default" href="https://banaroo.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{og_title}}">
+<meta property="og:description" content="{{meta_desc}}">
+<meta property="og:url" content="https://banaroo.app{{self_path}}">
+<meta property="og:image" content="https://banaroo.app/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FBF8F3">
+<link rel="icon" href="/img/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=Anuphan:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body class="lang-{{lang}}">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="{{home_href}}" aria-label="Banaroo home">
+      <img src="/img/logo.svg" alt="" width="32" height="32"><span>banaroo</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#product">{{nav_product}}</a>
+      <a href="#how">{{nav_how}}</a>
+      <a href="#pricing">{{nav_pricing}}</a>
+      <a href="#faq">{{nav_faq}}</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="lang" href="{{lang_switch_href}}" hreflang="{{lang_switch_short_lc}}" title="{{lang_switch_label}}">{{lang_switch_short}}</a>
+      <a class="btn btn-ghost nav-demo" href="{{demo_url}}" target="_blank" rel="noopener">{{nav_demo}}</a>
+      <a class="btn btn-dark" href="#book">{{nav_book}}</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="dot-live"></span>{{hero_eyebrow}}</p>
+      <h1>{{hero_h1_a}} <em>{{hero_h1_b}}</em></h1>
+      <p class="lead">{{hero_sub}}</p>
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" href="{{demo_url}}" target="_blank" rel="noopener">{{hero_cta_demo}} <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="btn btn-ghost btn-lg" href="#book">{{hero_cta_book}}</a>
+      </div>
+      <p class="micro"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>{{hero_note}}</p>
+    </div>
+
+    <div class="hero-visual">
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <img src="/img/app-bot-inbox.webp" width="390" height="750" alt="{{phone_alt}}">
+      </div>
+      <div class="feed" aria-live="off">
+        <div class="feed-head"><span class="dot-live"></span>{{feed_title}}</div>
+        <ul class="feed-list" id="feed"
+          data-new="{{feed_new}}" data-claim="{{feed_claim}}" data-now="{{feed_ago_now}}" data-min="{{feed_min}}" data-h="{{feed_h}}">
+          <li data-name="{{feed_1_name}}" data-meta="{{feed_1_meta}}"></li>
+          <li data-name="{{feed_2_name}}" data-meta="{{feed_2_meta}}"></li>
+          <li data-name="{{feed_3_name}}" data-meta="{{feed_3_meta}}"></li>
+          <li data-name="{{feed_4_name}}" data-meta="{{feed_4_meta}}"></li>
+          <li data-name="{{feed_5_name}}" data-meta="{{feed_5_meta}}"></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <ul class="strip">
+      <li><b>{{strip_1_k}}</b><span>{{strip_1_v}}</span></li>
+      <li><b>{{strip_2_k}}</b><span>{{strip_2_v}}</span></li>
+      <li><b>{{strip_3_k}}</b><span>{{strip_3_v}}</span></li>
+      <li><b>{{strip_4_k}}</b><span>{{strip_4_v}}</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="sec pain">
+  <div class="wrap">
+    <p class="eyebrow center">{{pain_eyebrow}}</p>
+    <h2 class="center">{{pain_h2}}</h2>
+    <div class="vs">
+      <div class="vs-head"><span>{{pain_before}}</span><span class="vs-good">{{pain_after}}</span></div>
+      <div class="vs-row reveal"><p class="bad">{{pain_1_a}}</p><p class="good">{{pain_1_b}}</p></div>
+      <div class="vs-row reveal"><p class="bad">{{pain_2_a}}</p><p class="good">{{pain_2_b}}</p></div>
+      <div class="vs-row reveal"><p class="bad">{{pain_3_a}}</p><p class="good">{{pain_3_b}}</p></div>
+      <div class="vs-row reveal"><p class="bad">{{pain_4_a}}</p><p class="good">{{pain_4_b}}</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT -->
+<section class="sec dark" id="product">
+  <div class="wrap">
+    <p class="eyebrow center">{{prod_eyebrow}}</p>
+    <h2 class="center">{{prod_h2}}</h2>
+    <p class="sub center">{{prod_sub}}</p>
+
+    <!-- Bot -->
+    <div class="feat reveal">
+      <div class="feat-copy">
+        <span class="tag tag-mint"><svg class="i" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 13v2M15 13v2"/></svg>{{bot_tag}}</span>
+        <h3>{{bot_h3}}</h3>
+        <p>{{bot_p}}</p>
+        <ul class="ticks"><li>{{bot_li_1}}</li><li>{{bot_li_2}}</li><li>{{bot_li_3}}</li></ul>
+      </div>
+      <div class="feat-vis">
+        <div class="mock mock-bot">
+          <div class="mb-top"><div class="mb-ic"><svg class="i" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 13v2M15 13v2"/></svg></div><div><small>{{feed_title}}</small><b>{{bot_mock_title}}</b></div></div>
+          <div class="mb-card"><div><small>35 {{feed_min}}</small><b>{{feed_1_name}}</b><span>{{feed_1_meta}}</span></div><em>{{feed_claim}}</em></div>
+          <div class="mb-card"><div><small>2 {{feed_h}}</small><b>{{feed_2_name}}</b><span>{{feed_2_meta}}</span></div><em>{{feed_claim}}</em></div>
+          <div class="mb-card faded"><div><small>5 {{feed_h}}</small><b>{{feed_3_name}}</b><span>{{feed_3_meta}}</span></div><em>{{feed_claim}}</em></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CRM -->
+    <div class="feat flip reveal">
+      <div class="feat-copy">
+        <span class="tag tag-sun"><svg class="i" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg>{{crm_tag}}</span>
+        <h3>{{crm_h3}}</h3>
+        <p>{{crm_p}}</p>
+        <ul class="ticks"><li>{{crm_li_1}}</li><li>{{crm_li_2}}</li><li>{{crm_li_3}}</li><li>{{crm_li_4}}</li></ul>
+      </div>
+      <div class="feat-vis">
+        <div class="mock mock-crm">
+          <small class="mc-kick">{{crm_screen_today}}</small>
+          <b class="mc-greet">{{crm_screen_greet}}</b>
+          <div class="mc-grid">
+            <div class="mc-stat hot"><small>{{crm_stat_3}}</small><b>4</b></div>
+            <div class="mc-stat"><small>{{crm_stat_1}}</small><b>6</b></div>
+            <div class="mc-stat"><small>{{crm_stat_2}}</small><b>3</b></div>
+            <div class="mc-stat"><small>{{crm_stat_4}}</small><b>1</b></div>
+          </div>
+          <ul class="mc-tasks">
+            <li><i></i>{{crm_task_1}}</li>
+            <li><i class="sun"></i>{{crm_task_2}}</li>
+            <li><i class="mint"></i>{{crm_task_3}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Website -->
+    <div class="feat reveal">
+      <div class="feat-copy">
+        <span class="tag tag-sky"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>{{web_tag}}</span>
+        <h3>{{web_h3}}</h3>
+        <p>{{web_p}}</p>
+        <ul class="ticks"><li>{{web_li_1}}</li><li>{{web_li_2}}</li><li>{{web_li_3}}</li></ul>
+        <a class="textlink" href="{{site_url}}" target="_blank" rel="noopener">{{web_link}} <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      </div>
+      <div class="feat-vis web-vis">
+        <div class="browser">
+          <div class="browser-bar"><i></i><i></i><i></i><span>baylight.banaroo.app</span></div>
+          <img src="/img/site-home.webp" width="1280" height="766" alt="{{web_alt}}">
+        </div>
+        <div class="mini-phone"><img src="/img/site-zh-phone.webp" width="390" height="800" alt=""></div>
+      </div>
+    </div>
+
+    <!-- Developments + Send -->
+    <div class="duo">
+      <div class="duo-card reveal">
+        <span class="tag tag-lilac"><svg class="i" viewBox="0 0 24 24"><path d="M4 21V8l6-4v17M10 21V10l10 3v8M3 21h18"/></svg>{{dev_tag}}</span>
+        <h3>{{dev_h3}}</h3>
+        <p>{{dev_p}}</p>
+        <div class="devs">
+          <div class="dev"><div class="dev-img d1"></div><div><b>{{dev_card_1_name}}</b><span>{{dev_card_1_meta}}</span></div><em>{{dev_badge}}</em></div>
+          <div class="dev"><div class="dev-img d2"></div><div><b>{{dev_card_2_name}}</b><span>{{dev_card_2_meta}}</span></div></div>
+          <div class="dev"><div class="dev-img d3"></div><div><b>{{dev_card_3_name}}</b><span>{{dev_card_3_meta}}</span></div></div>
+        </div>
+      </div>
+      <div class="duo-card reveal">
+        <span class="tag tag-mango"><svg class="i" viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>{{send_tag}}</span>
+        <h3>{{send_h3}}</h3>
+        <p>{{send_p}}</p>
+        <div class="sheet">
+          <b>{{send_sheet}}</b>
+          <div class="sheet-thumbs"><i class="t1"></i><i class="t2"></i><i class="t3"></i></div>
+          <div class="sheet-apps">
+            <span><i class="a-line">L</i>{{send_line}}</span>
+            <span><i class="a-wa">W</i>{{send_wa}}</span>
+            <span><i class="a-wc">微</i>{{send_wechat}}</span>
+            <span><i class="a-cp"><svg class="i" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg></i>{{send_copy}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOM -->
+<section class="sec">
+  <div class="wrap">
+    <p class="eyebrow center">{{custom_eyebrow}}</p>
+    <h2 class="center">{{custom_h2}}</h2>
+    <p class="sub center">{{custom_sub}}</p>
+    <div class="grid6">
+      <div class="cell reveal"><svg class="i ic" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2a10 10 0 0 0 0 20c1 0 1.5-.8 1.5-1.6 0-.4-.2-.8-.4-1.1-.3-.3-.4-.7-.4-1.1 0-.9.7-1.6 1.6-1.6H16a6 6 0 0 0 6-6c0-4.9-4.5-8.6-10-8.6z"/></svg><h4>{{custom_1_h}}</h4><p>{{custom_1_p}}</p></div>
+      <div class="cell reveal"><svg class="i ic" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><h4>{{custom_2_h}}</h4><p>{{custom_2_p}}</p></div>
+      <div class="cell reveal"><svg class="i ic" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg><h4>{{custom_3_h}}</h4><p>{{custom_3_p}}</p></div>
+      <div class="cell reveal"><svg class="i ic" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 13v2M15 13v2"/></svg><h4>{{custom_4_h}}</h4><p>{{custom_4_p}}</p></div>
+      <div class="cell reveal"><svg class="i ic" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg><h4>{{custom_5_h}}</h4><p>{{custom_5_p}}</p></div>
+      <div class="cell reveal"><svg class="i ic" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><h4>{{custom_6_h}}</h4><p>{{custom_6_p}}</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="sec soft" id="how">
+  <div class="wrap">
+    <p class="eyebrow center">{{how_eyebrow}}</p>
+    <h2 class="center">{{how_h2}}</h2>
+    <ol class="steps">
+      <li class="reveal"><span>1</span><h4>{{how_1_h}}</h4><p>{{how_1_p}}</p></li>
+      <li class="reveal"><span>2</span><h4>{{how_2_h}}</h4><p>{{how_2_p}}</p></li>
+      <li class="reveal"><span>3</span><h4>{{how_3_h}}</h4><p>{{how_3_p}}</p></li>
+    </ol>
+    <div class="roi reveal">
+      <div class="roi-num">฿90,000</div>
+      <div><h3>{{roi_h}}</h3><p>{{roi_p}}</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="sec" id="pricing">
+  <div class="wrap">
+    <p class="eyebrow center">{{price_eyebrow}}</p>
+    <h2 class="center">{{price_h2}}</h2>
+    <p class="sub center">{{price_sub}}</p>
+    <div class="plans">
+      <div class="plan reveal">
+        <h3>{{plan_start}}</h3><p class="plan-for">{{plan_start_for}}</p>
+        <div class="price"><b>{{plan_start_price}}</b><span>{{per_month}}</span></div>
+        <p class="usd">{{plan_start_usd}}</p>
+        <a class="btn btn-ghost btn-block" href="#book" data-plan="Start">{{plan_cta}}</a>
+        <ul class="ticks"><li>{{plan_start_1}}</li><li>{{plan_start_2}}</li><li>{{plan_start_3}}</li><li>{{plan_start_4}}</li><li>{{plan_start_5}}</li></ul>
+      </div>
+      <div class="plan plan-hot reveal">
+        <span class="badge">{{plan_popular}}</span>
+        <h3>{{plan_growth}}</h3><p class="plan-for">{{plan_growth_for}}</p>
+        <div class="price"><b>{{plan_growth_price}}</b><span>{{per_month}}</span></div>
+        <p class="usd">{{plan_growth_usd}}</p>
+        <a class="btn btn-primary btn-block" href="#book" data-plan="Growth">{{plan_cta}}</a>
+        <p class="plan-plus">{{plan_growth_0}}</p>
+        <ul class="ticks"><li>{{plan_growth_1}}</li><li>{{plan_growth_2}}</li><li>{{plan_growth_3}}</li></ul>
+      </div>
+      <div class="plan reveal">
+        <h3>{{plan_pro}}</h3><p class="plan-for">{{plan_pro_for}}</p>
+        <div class="price"><b>{{plan_pro_price}}</b><span>{{per_month}}</span></div>
+        <p class="usd">{{plan_pro_usd}}</p>
+        <a class="btn btn-ghost btn-block" href="#book" data-plan="Pro">{{plan_cta}}</a>
+        <p class="plan-plus">{{plan_pro_0}}</p>
+        <ul class="ticks"><li>{{plan_pro_1}}</li><li>{{plan_pro_2}}</li><li>{{plan_pro_3}}</li></ul>
+      </div>
+    </div>
+    <p class="price-foot"><a href="{{demo_url}}" target="_blank" rel="noopener">{{price_foot}} →</a></p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec soft" id="faq">
+  <div class="wrap faq-wrap">
+    <div>
+      <p class="eyebrow">{{faq_eyebrow}}</p>
+      <h2>{{faq_h2}}</h2>
+    </div>
+    <div class="faq">
+      <details><summary>{{faq_1_q}}</summary><p>{{faq_1_a}}</p></details>
+      <details><summary>{{faq_2_q}}</summary><p>{{faq_2_a}}</p></details>
+      <details><summary>{{faq_3_q}}</summary><p>{{faq_3_a}}</p></details>
+      <details><summary>{{faq_4_q}}</summary><p>{{faq_4_a}}</p></details>
+      <details><summary>{{faq_5_q}}</summary><p>{{faq_5_a}}</p></details>
+      <details><summary>{{faq_6_q}}</summary><p>{{faq_6_a}}</p></details>
+      <details><summary>{{faq_7_q}}</summary><p>{{faq_7_a}}</p></details>
+      <details><summary>{{faq_8_q}}</summary><p>{{faq_8_a}}</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section class="sec book" id="book">
+  <div class="wrap book-in">
+    <div class="book-copy">
+      <h2>{{cta_h2}}</h2>
+      <p class="lead">{{cta_p}}</p>
+      <a class="btn btn-light btn-lg" href="{{demo_url}}" target="_blank" rel="noopener">{{hero_cta_demo}} <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      <p class="contact-or">{{contact_or}}</p>
+      <div class="contacts">
+        <a class="chip chip-line" id="c-line" href="#book"><i>L</i>{{contact_line}} <small>{{contact_soon}}</small></a>
+        <a class="chip chip-wa" id="c-wa" href="#book"><i>W</i>{{contact_wa}} <small>{{contact_soon}}</small></a>
+      </div>
+    </div>
+    <form class="form" name="demo-request" method="POST" data-netlify="true" netlify-honeypot="company_site" id="demo-form">
+      <input type="hidden" name="form-name" value="demo-request">
+      <input type="hidden" name="page_lang" value="{{lang}}">
+      <p class="hp"><label>Leave empty <input name="company_site" tabindex="-1" autocomplete="off"></label></p>
+      <label><span>{{form_name}}</span><input name="name" required autocomplete="name"></label>
+      <label><span>{{form_agency}}</span><input name="agency" required autocomplete="organization"></label>
+      <label><span>{{form_phone}}</span><input name="contact" required autocomplete="tel"></label>
+      <div class="form-2">
+        <label><span>{{form_city}}</span><input name="city" placeholder="{{form_city_ph}}"></label>
+        <label><span>{{form_plan}}</span>
+          <select name="plan" id="plan-select">
+            <option value="Not sure">{{form_plan_any}}</option>
+            <option value="Start">Start · {{plan_start_price}}</option>
+            <option value="Growth">Growth · {{plan_growth_price}}</option>
+            <option value="Pro">Pro · {{plan_pro_price}}</option>
+          </select>
+        </label>
+      </div>
+      <label><span>{{form_msg}}</span><textarea name="message" rows="3"></textarea></label>
+      <button class="btn btn-primary btn-lg btn-block" type="submit">{{form_submit}}</button>
+      <p class="micro">{{form_note}}</p>
+      <div class="thanks" hidden><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><h3>{{form_thanks_h}}</h3><p>{{form_thanks_p}}</p></div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <a class="brand" href="{{home_href}}"><img src="/img/logo.svg" alt="" width="28" height="28"><span>banaroo</span></a>
+      <p>{{foot_tag}}<br>{{foot_made}}</p>
+    </div>
+    <nav class="foot-links">
+      <a href="#product">{{nav_product}}</a>
+      <a href="#pricing">{{nav_pricing}}</a>
+      <a href="#faq">{{nav_faq}}</a>
+      <a href="{{demo_url}}" target="_blank" rel="noopener">{{foot_demo}}</a>
+      <a href="{{site_url}}" target="_blank" rel="noopener">{{foot_site}}</a>
+      <a href="{{lang_switch_href}}">{{lang_switch_label}}</a>
+    </nav>
+  </div>
+  <div class="wrap foot-bottom">© <span id="yr">2026</span> {{foot_rights}}</div>
+</footer>
+
+<script>
+window.BANAROO = { line: "{{line_url}}", whatsapp: "{{whatsapp_url}}" };
+</script>
+<script src="/main.js" defer></script>
+</body>
+</html>
