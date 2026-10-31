@@ -39,8 +39,27 @@
     </nav>
     <div class="nav-actions">
       <a class="lang" href="{{lang_switch_href}}" hreflang="{{lang_switch_short_lc}}" title="{{lang_switch_label}}">{{lang_switch_short}}</a>
-      <a class="btn btn-ghost nav-demo" href="{{demo_url}}" target="_blank" rel="noopener">{{nav_demo}}</a>
-      <a class="btn btn-dark" href="#book">{{nav_book}}</a>
+      <details class="pop nav-demo">
+        <summary class="btn btn-ghost">{{nav_demo}} <svg class="i chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="pop-menu">
+          <a href="{{demo_url}}" target="_blank" rel="noopener"><span class="pm-ic pm-crm"><svg class="i" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span><span><b>{{demo_crm_t}}</b><small>{{demo_crm_s}}</small></span></a>
+          <a href="{{site_url}}" target="_blank" rel="noopener"><span class="pm-ic pm-web"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><span><b>{{demo_web_t}}</b><small>{{demo_web_s}}</small></span></a>
+        </div>
+      </details>
+      <a class="btn btn-dark nav-book" href="#book">{{nav_book}}</a>
+      <details class="pop menu">
+        <summary class="menu-btn" aria-label="Menu"><svg class="i" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+        <div class="pop-menu menu-panel">
+          <a href="#product">{{nav_product}}</a>
+          <a href="#how">{{nav_how}}</a>
+          <a href="#pricing">{{nav_pricing}}</a>
+          <a href="#faq">{{nav_faq}}</a>
+          <a href="{{demo_url}}" target="_blank" rel="noopener">{{demo_crm_t}} ↗</a>
+          <a href="{{site_url}}" target="_blank" rel="noopener">{{demo_web_t}} ↗</a>
+          <a class="menu-lang" href="{{lang_switch_href}}">{{lang_switch_label}}</a>
+          <a class="btn btn-primary btn-block" href="#book">{{nav_book}}</a>
+        </div>
+      </details>
     </div>
   </div>
 </header>
@@ -55,11 +74,19 @@
       <p class="eyebrow"><span class="dot-live"></span>{{hero_eyebrow}}</p>
       <h1>{{hero_h1_a}} <em>{{hero_h1_b}}</em></h1>
       <p class="lead">{{hero_sub}}</p>
-      <div class="cta-row">
-        <a class="btn btn-primary btn-lg" href="{{demo_url}}" target="_blank" rel="noopener">{{hero_cta_demo}} <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-        <a class="btn btn-ghost btn-lg" href="#book">{{hero_cta_book}}</a>
+      <div class="demos">
+        <a class="demo-card dc-crm" href="{{demo_url}}" target="_blank" rel="noopener">
+          <span class="dc-ic"><svg class="i" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg></span>
+          <span class="dc-txt"><small>{{demo_live}}</small><b>{{demo_crm_t}}</b><span>{{demo_crm_s}}</span></span>
+          <svg class="i dc-go" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+        <a class="demo-card dc-web" href="{{site_url}}" target="_blank" rel="noopener">
+          <span class="dc-ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
+          <span class="dc-txt"><small>{{demo_live}}</small><b>{{demo_web_t}}</b><span>{{demo_web_s}}</span></span>
+          <svg class="i dc-go" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
       </div>
-      <p class="micro"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>{{hero_note}}</p>
+      <p class="micro"><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>{{hero_note}} <a href="#book">{{hero_cta_book}} →</a></p>
     </div>
 
     <div class="hero-visual">
@@ -303,7 +330,10 @@
     <div class="book-copy">
       <h2>{{cta_h2}}</h2>
       <p class="lead">{{cta_p}}</p>
-      <a class="btn btn-light btn-lg" href="{{demo_url}}" target="_blank" rel="noopener">{{hero_cta_demo}} <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      <div class="book-demos">
+        <a class="btn btn-light btn-lg" href="{{demo_url}}" target="_blank" rel="noopener">{{demo_crm_t}} <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="btn btn-outline-light btn-lg" href="{{site_url}}" target="_blank" rel="noopener">{{demo_web_t}} <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      </div>
       <p class="contact-or">{{contact_or}}</p>
       <div class="contacts">
         <a class="chip chip-line" id="c-line" href="#book"><i>L</i>{{contact_line}} <small>{{contact_soon}}</small></a>

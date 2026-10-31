@@ -74,5 +74,12 @@
     });
   }
 
+  // Close popovers on outside click, Escape, or picking a link
+  var pops = document.querySelectorAll('details.pop');
+  document.addEventListener('click', function (e) {
+    pops.forEach(function (d) { if (d.open && (!d.contains(e.target) || e.target.closest('.pop-menu a'))) d.open = false; });
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') pops.forEach(function (d) { d.open = false; }); });
+
   var yr = document.getElementById('yr'); if (yr) yr.textContent = new Date().getFullYear();
 })();

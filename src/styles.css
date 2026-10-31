@@ -322,3 +322,52 @@ h2.center,.sub.center,p.center{text-align:center;margin-left:auto;margin-right:a
   .btn:hover,.cell:hover{transform:none}
 }
 @media (max-width:480px){.dev em{display:none}}
+
+/* ---- polish pass: demos, popovers, mobile menu ---- */
+.btn-outline-light{background:transparent;border-color:rgba(255,255,255,.55);color:#fff}
+.btn-outline-light:hover{background:rgba(255,255,255,.12)}
+.book-demos{display:flex;flex-wrap:wrap;gap:10px}
+
+.demos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px;max-width:600px}
+.demo-card{position:relative;display:flex;align-items:flex-start;gap:12px;text-decoration:none;border-radius:20px;padding:16px 40px 16px 16px;border:1px solid var(--line);background:rgba(255,255,255,.75);box-shadow:var(--shadow);transition:transform .18s ease,box-shadow .2s,border-color .2s}
+.demo-card:hover{transform:translateY(-2px);border-color:#FFC7A8;box-shadow:0 2px 4px rgba(21,19,31,.05),0 18px 40px -16px rgba(242,69,31,.35)}
+.dc-crm{background:linear-gradient(135deg,var(--mango),var(--mango-2));border-color:transparent;color:#fff;box-shadow:0 14px 34px -14px rgba(242,69,31,.7)}
+.dc-crm:hover{border-color:transparent}
+.dc-ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;flex:none;font-size:19px;background:#FFEDE3;color:var(--mango-2)}
+.dc-crm .dc-ic{background:rgba(255,255,255,.2);color:#fff}
+.dc-txt{display:grid;gap:1px;min-width:0}
+.dc-txt small{font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+.lang-th .dc-txt small{letter-spacing:0;text-transform:none;font-size:12.5px}
+.dc-txt b{font:700 17.5px/1.25 var(--display);letter-spacing:-.01em}
+.dc-txt span{font-size:13.5px;line-height:1.4;opacity:.85}
+.dc-go{position:absolute;right:14px;top:16px;opacity:.8}
+.micro a{color:var(--mango-2);font-weight:600;text-decoration:none;margin-left:4px}
+.micro a:hover{text-decoration:underline}
+@media (max-width:560px){.demos{grid-template-columns:1fr}}
+
+.pop{position:relative}
+.pop>summary{list-style:none;cursor:pointer}
+.pop>summary::-webkit-details-marker{display:none}
+.pop .chev{transition:transform .2s}
+.pop[open] .chev{transform:rotate(180deg)}
+.pop-menu{position:absolute;right:0;top:calc(100% + 8px);min-width:300px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 20px 50px -18px rgba(21,19,31,.35);padding:8px;display:grid;gap:2px;z-index:60;animation:popIn .16s ease}
+@keyframes popIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.pop-menu a{display:flex;gap:12px;align-items:center;padding:10px 12px;border-radius:12px;text-decoration:none}
+.pop-menu a:hover{background:var(--paper)}
+.pop-menu b{display:block;font-size:15px}
+.pop-menu small{display:block;font-size:13px;color:var(--muted)}
+.pm-ic{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;flex:none;font-size:17px}
+.pm-crm{background:#FFEDE3;color:var(--mango-2)}
+.pm-web{background:#E3F2FF;color:#2378C9}
+.menu{display:none}
+.menu-btn{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;border:1px solid var(--line);background:rgba(255,255,255,.7);font-size:20px}
+.menu-panel{min-width:240px}
+.menu-panel a{font-weight:600}
+.menu-panel .btn{margin-top:6px;color:#fff}
+.menu-panel .btn:hover{background:linear-gradient(135deg,var(--mango),var(--mango-2))}
+@media (max-width:900px){.menu{display:block}}
+
+h1 em,h2,h3{text-wrap:balance}
+section[id]{scroll-margin-top:76px}
+.menu-lang{display:none!important}
+@media (max-width:420px){.nav-actions .lang{display:none}.menu-lang{display:flex!important}.brand{font-size:21px}}
