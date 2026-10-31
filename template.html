@@ -32,6 +32,7 @@
     </a>
     <nav class="nav-links" aria-label="Main">
       <a href="#product">{{nav_product}}</a>
+      <a href="#website">{{nav_web}}</a>
       <a href="#how">{{nav_how}}</a>
       <a href="#pricing">{{nav_pricing}}</a>
       <a href="#faq">{{nav_faq}}</a>
@@ -53,6 +54,7 @@
         <summary class="menu-btn" aria-label="Menu"><svg class="i" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
         <div class="pop-menu menu-panel">
           <a href="#product">{{nav_product}}</a>
+          <a href="#website">{{nav_web}}</a>
           <a href="#how">{{nav_how}}</a>
           <a href="#pricing">{{nav_pricing}}</a>
           <a href="#faq">{{nav_faq}}</a>
@@ -200,45 +202,6 @@
       </div>
     </div>
 
-    <!-- Website -->
-    <div class="feat reveal">
-      <div class="feat-copy">
-        <span class="tag tag-sky"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>{{web_tag}}</span>
-        <h3>{{web_h3}}</h3>
-        <p>{{web_p}}</p>
-        <ul class="ticks"><li>{{web_li_1}}</li><li>{{web_li_2}}</li><li>{{web_li_3}}</li></ul>
-        <a class="textlink" href="{{site_url}}" target="_blank" rel="noopener">{{web_link}} <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-      </div>
-      <div class="feat-vis web-vis">
-        <div class="browser">
-          <div class="browser-bar"><i></i><i></i><i></i><span>baylight.banaroo.app</span></div>
-          <img src="/img/site-home.webp" width="1280" height="766" alt="{{web_alt}}">
-        </div>
-        <div class="mini-phone lp" id="langanim">
-            <div class="lp-scr">
-              <div class="lp-v v-en" lang="en">
-                <div class="lp-top"><span class="lp-brand">≋ <i>Bay</i> light</span><span class="lp-pill">EN ▾</span></div>
-                <div class="lp-hero"><b>Homes by the sea, picked for you</b><span class="lp-tabs"><em>Buy</em><em>Rent</em></span></div>
-                <div class="lp-card"><span class="lp-ph"></span><div><b>Horizon Tower</b><small>1 bed · 32 m²</small><i>$78K</i></div></div>
-                <span class="lp-btn">View homes</span>
-              </div><div class="lp-v v-ru" lang="ru">
-                <div class="lp-top"><span class="lp-brand">≋ <i>Bay</i> light</span><span class="lp-pill">RU ▾</span></div>
-                <div class="lp-hero"><b>Дома у моря, подобранные для вас</b><span class="lp-tabs"><em>Купить</em><em>Аренда</em></span></div>
-                <div class="lp-card"><span class="lp-ph"></span><div><b>Horizon Tower</b><small>1 спальня · 32 м²</small><i>$78K</i></div></div>
-                <span class="lp-btn">Смотреть объекты</span>
-              </div><div class="lp-v v-zh" lang="zh">
-                <div class="lp-top"><span class="lp-brand">≋ <i>Bay</i> light</span><span class="lp-pill">中文 ▾</span></div>
-                <div class="lp-hero"><b>为您精选的海边好房</b><span class="lp-tabs"><em>买房</em><em>租房</em></span></div>
-                <div class="lp-card"><span class="lp-ph"></span><div><b>Horizon Tower</b><small>1 卧 · 32 m²</small><i>$78K</i></div></div>
-                <span class="lp-btn">查看房源</span>
-              </div>
-              <div class="lp-menu"><span data-l="0">English</span><span data-l="1">Русский</span><span data-l="2">中文</span></div>
-            </div>
-            <span class="lp-tap"></span>
-          </div>
-      </div>
-    </div>
-
     <!-- Developments + Send -->
     <div class="duo">
       <div class="duo-card reveal">
@@ -298,6 +261,69 @@
           </div>
           <ol class="sa-steps"><li>{{sa_step_1}}</li><li>{{sa_step_2}}</li><li>{{sa_step_3}}</li></ol>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEBSITE -->
+<section class="sec soft site" id="website">
+  <div class="wrap">
+    <p class="eyebrow center"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>{{web_tag}}</p>
+    <h2 class="center">{{web_h2}}</h2>
+    <p class="sub center">{{web_sub}}</p>
+    <div class="site-row">
+      <div class="site-flow reveal">
+      <ol class="flow">
+        <li><span class="fl-ic"><svg class="i" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M12 8v6M9 11h6"/></svg></span><div><h4>{{web_flow_1_h}}</h4><p>{{web_flow_1_p}}</p></div></li>
+        <li><span class="fl-ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><div><h4>{{web_flow_2_h}}</h4><p>{{web_flow_2_p}}</p></div></li>
+        <li><span class="fl-ic"><svg class="i" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div><h4>{{web_flow_3_h}}</h4><p>{{web_flow_3_p}}</p></div></li>
+        <li><span class="fl-ic"><svg class="i" viewBox="0 0 24 24"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5.1 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.5-6.9A2 2 0 0 0 16.8 4H7.2a2 2 0 0 0-1.7 1.1z"/></svg></span><div><h4>{{web_flow_4_h}}</h4><p>{{web_flow_4_p}}</p></div></li>
+      </ol>
+      <p class="flow-note"><svg class="i" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>{{web_flow_note}}</p>
+      </div>
+      <div class="web-vis site-vis reveal">
+        <div class="browser">
+          <div class="browser-bar"><i></i><i></i><i></i><span>baylight.banaroo.app</span></div>
+          <img src="/img/site-home.webp" width="1280" height="766" alt="{{web_alt}}">
+        </div>
+        <div class="mini-phone lp" id="langanim">
+            <div class="lp-scr">
+              <div class="lp-v v-en" lang="en">
+                <div class="lp-top"><span class="lp-brand">≋ <i>Bay</i> light</span><span class="lp-pill">EN ▾</span></div>
+                <div class="lp-hero"><b>Homes by the sea, picked for you</b><span class="lp-tabs"><em>Buy</em><em>Rent</em></span></div>
+                <div class="lp-card"><span class="lp-ph"></span><div><b>Horizon Tower</b><small>1 bed · 32 m²</small><i>$78K</i></div></div>
+                <span class="lp-btn">View homes</span>
+              </div><div class="lp-v v-ru" lang="ru">
+                <div class="lp-top"><span class="lp-brand">≋ <i>Bay</i> light</span><span class="lp-pill">RU ▾</span></div>
+                <div class="lp-hero"><b>Дома у моря, подобранные для вас</b><span class="lp-tabs"><em>Купить</em><em>Аренда</em></span></div>
+                <div class="lp-card"><span class="lp-ph"></span><div><b>Horizon Tower</b><small>1 спальня · 32 м²</small><i>$78K</i></div></div>
+                <span class="lp-btn">Смотреть объекты</span>
+              </div><div class="lp-v v-zh" lang="zh">
+                <div class="lp-top"><span class="lp-brand">≋ <i>Bay</i> light</span><span class="lp-pill">中文 ▾</span></div>
+                <div class="lp-hero"><b>为您精选的海边好房</b><span class="lp-tabs"><em>买房</em><em>租房</em></span></div>
+                <div class="lp-card"><span class="lp-ph"></span><div><b>Horizon Tower</b><small>1 卧 · 32 m²</small><i>$78K</i></div></div>
+                <span class="lp-btn">查看房源</span>
+              </div>
+              <div class="lp-menu"><span data-l="0">English</span><span data-l="1">Русский</span><span data-l="2">中文</span></div>
+            </div>
+            <span class="lp-tap"></span>
+          </div>
+      </div>
+    </div>
+    <div class="grid6">
+      <div class="cell reveal"><svg class="i ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></svg><h4>{{web_g1_h}}</h4><p>{{web_g1_p}}</p></div>
+      <div class="cell reveal"><svg class="i ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><h4>{{web_g2_h}}</h4><p>{{web_g2_p}}</p></div>
+      <div class="cell reveal"><svg class="i ic" viewBox="0 0 24 24"><path d="M4 21V8l6-4v17M10 21V10l10 3v8M3 21h18"/></svg><h4>{{web_g3_h}}</h4><p>{{web_g3_p}}</p></div>
+      <div class="cell reveal"><svg class="i ic" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg><h4>{{web_g4_h}}</h4><p>{{web_g4_p}}</p></div>
+      <div class="cell reveal"><svg class="i ic" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2a10 10 0 0 0 0 20c1 0 1.5-.8 1.5-1.6 0-.4-.2-.8-.4-1.1-.3-.3-.4-.7-.4-1.1 0-.9.7-1.6 1.6-1.6H16a6 6 0 0 0 6-6c0-4.9-4.5-8.6-10-8.6z"/></svg><h4>{{web_g5_h}}</h4><p>{{web_g5_p}}</p></div>
+      <div class="cell reveal"><svg class="i ic" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg><h4>{{web_g6_h}}</h4><p>{{web_g6_p}}</p></div>
+    </div>
+    <div class="site-foot reveal">
+      <p><b>{{web_inc_b}}</b> {{web_inc}}</p>
+      <div class="site-links">
+        <a class="btn btn-primary" href="{{site_url}}" target="_blank" rel="noopener">{{web_link}} <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="btn btn-outline-light" href="{{demo_url}}" target="_blank" rel="noopener">{{web_link_crm}} <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
       </div>
     </div>
   </div>
@@ -419,31 +445,34 @@
         <label><span>{{form_agency}}</span><input name="agency" required autocomplete="organization"></label>
       </div>
       <div class="form-2">
-        <label><span>{{form_email}}</span><input name="email" type="email" required autocomplete="email"></label>
         <label><span>{{form_phone}}</span><input name="contact" required autocomplete="tel"></label>
-      </div>
-      <div class="form-2">
         <label><span>{{form_city}}</span><input name="city" required placeholder="{{form_city_ph}}"></label>
-        <label><span>{{form_plan}}</span>
-          <select name="plan" id="plan-select">
-            <option value="Not sure">{{form_plan_any}}</option>
-            <option value="Start">Start · {{plan_start_price}}</option>
-            <option value="Growth">Growth · {{plan_growth_price}}</option>
-            <option value="Pro">Pro · {{plan_pro_price}}</option>
-          </select>
-        </label>
       </div>
-      <div class="form-2">
-        <label><span>{{form_size}}</span><input name="team_size" type="number" min="1" inputmode="numeric"></label>
-        <label><span>{{form_site}}</span><input name="website" autocomplete="url" inputmode="url"></label>
-      </div>
-      <label><span>{{form_groups}}</span><textarea name="facebook_groups" rows="2" placeholder="{{form_groups_ph}}"></textarea></label>
-      <div class="form-2">
-        <label><span>{{form_logo}}</span><input name="logo" type="file" accept="image/*,.svg,.pdf"></label>
-        <label><span>{{form_listings}}</span><input name="listings" type="file" accept=".xlsx,.xls,.csv,.ods,.numbers,.pdf"></label>
-      </div>
-      <p class="files-note" id="files-note">{{form_files_note}}</p>
-      <label><span>{{form_msg}}</span><textarea name="message" rows="2"></textarea></label>
+      <label><span>{{form_plan}}</span>
+        <select name="plan" id="plan-select">
+          <option value="Not sure">{{form_plan_any}}</option>
+          <option value="Start">Start · {{plan_start_price}}</option>
+          <option value="Growth">Growth · {{plan_growth_price}}</option>
+          <option value="Pro">Pro · {{plan_pro_price}}</option>
+        </select>
+      </label>
+      <details class="more">
+        <summary>{{form_more}}</summary>
+        <div class="more-in">
+          <div class="form-2">
+            <label><span>{{form_email}}</span><input name="email" type="email" autocomplete="email"></label>
+            <label><span>{{form_size}}</span><input name="team_size" type="number" min="1" inputmode="numeric"></label>
+          </div>
+          <label><span>{{form_site}}</span><input name="website" autocomplete="url" inputmode="url"></label>
+          <label><span>{{form_groups}}</span><textarea name="facebook_groups" rows="2" placeholder="{{form_groups_ph}}"></textarea></label>
+          <div class="form-2">
+            <label><span>{{form_logo}}</span><input name="logo" type="file" accept="image/*,.svg,.pdf"></label>
+            <label><span>{{form_listings}}</span><input name="listings" type="file" accept=".xlsx,.xls,.csv,.ods,.numbers,.pdf"></label>
+          </div>
+          <p class="files-note" id="files-note">{{form_files_note}}</p>
+          <label><span>{{form_msg}}</span><textarea name="message" rows="2"></textarea></label>
+        </div>
+      </details>
       <button class="btn btn-primary btn-lg btn-block" type="submit">{{form_submit}}</button>
       <p class="micro">{{form_note}}</p>
       <div class="thanks" hidden><svg class="i" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><h3>{{form_thanks_h}}</h3><p>{{form_thanks_p}}</p></div>
