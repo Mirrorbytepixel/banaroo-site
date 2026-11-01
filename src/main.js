@@ -142,6 +142,20 @@
   var ba = document.getElementById('botanim');
   if (ba) {
     var btap = ba.querySelector('.ba-tap'), bbase = ba.className, bi = 0, btimer = null, brun = false, bsrc = '';
+    // The post and its check chips wrap differently per language and screen width:
+    // size the stage to its content so the chips never sit on top of the list below.
+    var bstage = ba.querySelector('.ba-stage');
+    var bfit = function () {
+      var keep = ba.className;
+      ba.className = bbase + bsrc + ' post m k1 k2';
+      bstage.style.transition = 'none'; bstage.style.height = 'auto';
+      var h = bstage.offsetHeight;
+      bstage.style.height = ''; void bstage.offsetHeight; bstage.style.transition = '';
+      ba.className = keep;
+      ba.style.setProperty('--ba-stage', Math.ceil(h) + 'px');
+    };
+    bfit(); window.addEventListener('resize', bfit);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(bfit);
     // [classes, tap x%, tap y%, press?, ms]
     var bseq = [
       ['', 88, 110, 0, 500],
@@ -165,7 +179,7 @@
       btap.style.setProperty('--tx', st[1] + '%'); btap.style.setProperty('--ty', y + '%');
       btap.style.opacity = st[2] > 100 ? 0 : 1;
       btap.classList.remove('press'); if (st[3]) { void btap.offsetWidth; btap.classList.add('press'); }
-      btimer = setTimeout(function () { bi = (bi + 1) % bseq.length; if (bi === 0) bsrc = bsrc ? '' : ' tg'; if (brun) bshow(); }, st[4]);
+      btimer = setTimeout(function () { bi = (bi + 1) % bseq.length; if (bi === 0) { bsrc = bsrc ? '' : ' tg'; bfit(); } if (brun) bshow(); }, st[4]);
     };
     if (reduce) { ba.className = bbase + ' post m k1 k2'; }
     else if ('IntersectionObserver' in window) {
@@ -271,11 +285,11 @@
   // Get started form: Netlify form with files, sent via fetch, then show thanks
   var form = document.getElementById('start-form');
   if (form) {
-    var note = document.getElementById('files-note'), MAX = 8 * 1024 * 1024;
+    var note = document.getElementById('files-note'), FILE_MAX = 8 * 1024 * 1024;
     var tooBig = function () {
       var total = 0;
       form.querySelectorAll('input[type=file]').forEach(function (f) { if (f.files && f.files[0]) total += f.files[0].size; });
-      return total > MAX;
+      return total > FILE_MAX;
     };
     form.querySelectorAll('input[type=file]').forEach(function (f) {
       f.addEventListener('change', function () { if (note) note.classList.toggle('warn', tooBig()); });

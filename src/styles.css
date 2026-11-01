@@ -102,6 +102,7 @@ h1 em{display:block;font-family:var(--serif);font-weight:400;font-style:italic;l
   .hero{padding-top:34px}
   .phone{width:232px;border-radius:40px}
   .phone img{border-radius:31px}
+  .phone-notch{top:17px;width:68px;height:20px}
   .feed{transform:translateX(50%);width:min(320px,calc(100vw - 40px))}
   .strip{gap:18px}
   .cta-row .btn{flex:1 1 100%}
@@ -514,7 +515,7 @@ section[id]{scroll-margin-top:76px}
 
 /* ---- bot animation ---- */
 .ba{position:relative}
-.ba-stage{position:relative;height:212px;margin-bottom:4px;transition:height .6s cubic-bezier(.2,.8,.2,1),margin .6s}
+.ba-stage{position:relative;height:var(--ba-stage,212px);margin-bottom:4px;transition:height .6s cubic-bezier(.2,.8,.2,1),margin .6s}
 .ba-scan{display:flex;align-items:center;gap:8px;font-size:12.5px;color:#A9A3BD;margin-bottom:9px}
 .ba-dot{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 0 rgba(43,217,159,.6);animation:baPulse 1.6s infinite}
 @keyframes baPulse{70%{box-shadow:0 0 0 7px rgba(43,217,159,0)}100%{box-shadow:0 0 0 0 rgba(43,217,159,0)}}
@@ -560,7 +561,7 @@ section[id]{scroll-margin-top:76px}
 .ba.fly .ba-chk{opacity:0;transform:translateY(20px) scale(.9);transition:transform .3s,opacity .2s}
 .ba.fly .ba-new{max-height:90px;padding-top:13px;padding-bottom:13px;margin-bottom:0;opacity:1;border-color:rgba(43,217,159,.6);background:rgba(43,217,159,.08)}
 .ba.fly .ba-stage{height:28px;margin-bottom:0}
-.ba.fly .ba-list{height:390px}
+.ba.fly .ba-list{height:calc(var(--ba-stage,212px) + 182px)}
 .ba.out .ba-new,.ba.out .ba-list{opacity:0;transition:opacity .35s}
 .ba.claim .ba-claim{background:rgba(43,217,159,.14);color:var(--mint);box-shadow:inset 0 0 0 1.5px var(--mint)}
 .ba.claim .ba-claim .c-a{opacity:0}.ba.claim .ba-claim .c-b{opacity:1}
