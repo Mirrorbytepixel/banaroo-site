@@ -51,7 +51,7 @@ for code, label, path, strings in LANGS:
     os.makedirs(d, exist_ok=True)
     open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(out)
 
-open(os.path.join(OUT, "robots.txt"), "w").write("User-agent: *\nAllow: /\nSitemap: https://banaroo.app/sitemap.xml\n")
+open(os.path.join(OUT, "robots.txt"), "w").write("User-agent: *\nAllow: /\nDisallow: /stats/\nSitemap: https://banaroo.app/sitemap.xml\n")
 open(os.path.join(OUT, "sitemap.xml"), "w").write("""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://banaroo.app/</loc></url>
