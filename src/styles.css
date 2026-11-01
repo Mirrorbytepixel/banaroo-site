@@ -126,6 +126,10 @@ h2.center,.sub.center,p.center{text-align:center;margin-left:auto;margin-right:a
 .vs-head,.vs-row{display:grid;grid-template-columns:1fr 1fr}
 .vs-head span{padding:16px 28px;font:600 13px/1 var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--paper)}
 .lang-th .vs-head span{letter-spacing:0;text-transform:none;font-size:14px}
+.vs-list{max-width:760px}
+.vs-list .vs-head,.vs-list .vs-row{grid-template-columns:1fr}
+.vs-list .vs-head{display:grid}
+h2.pain-q{font-size:clamp(24px,3vw,36px);max-width:26em;line-height:1.2}
 .vs-head .vs-good{color:#0B8F66;background:rgba(43,217,159,.1)}
 .vs-row{border-top:1px solid var(--line)}
 .vs-row p{padding:22px 28px 22px 58px;position:relative;font-size:16.5px}
