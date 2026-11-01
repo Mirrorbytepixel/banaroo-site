@@ -201,8 +201,8 @@ EN = {
 "roi_p": "Sell one $120,000 condo at 3% and you earn $3,600. A year of Banaroo Growth, paid yearly, is $2,690. Every deal after that is a bonus.",
 
 "price_eyebrow": "Pricing",
-"price_h2": "Simple monthly plans. No surprises.",
-"price_sub": "Prices per agency, per month.",
+"price_h2": "CRM, website and lead bot in one. For less than most CRMs alone.",
+"price_sub": "One price per agency, per month, not per agent. No separate bills for a web designer or a lead service.",
 "offer_tag": "Launch offer",
 "offer_ends": "Ends 31 January 2027",
 "offer_body": "No setup fee: we do your branding, website and listing import. Your price is locked for 12 months.",
@@ -502,8 +502,8 @@ TH = {
 "roi_p": "ขายคอนโด ฿3.6M คอมมิชชัน 3% ได้ ฿108,000 ค่า Banaroo Growth จ่ายรายปีแค่ ฿89,000 ดีลต่อจากนั้นคือโบนัสล้วนๆ",
 
 "price_eyebrow": "ราคา",
-"price_h2": "แพ็กเกจรายเดือนที่เข้าใจง่าย ไม่มีค่าใช้จ่ายแอบแฝง",
-"price_sub": "ราคาต่อเอเจนซี่ต่อเดือน",
+"price_h2": "CRM เว็บไซต์ และบอทหาลีดในที่เดียว ในราคาที่ถูกกว่า CRM ส่วนใหญ่อย่างเดียว",
+"price_sub": "ราคาเดียวต่อเอเจนซี่ต่อเดือน ไม่คิดต่อเอเจนต์ ไม่ต้องจ่ายแยกค่าทำเว็บหรือค่าบริการหาลีด",
 "offer_tag": "โปรเปิดตัว",
 "offer_ends": "หมดเขต 31 มกราคม 2570",
 "offer_body": "ไม่มีค่าติดตั้ง เราทำแบรนด์ เว็บไซต์ และย้ายข้อมูลทรัพย์ให้ และล็อกราคาไว้ 12 เดือน",
