@@ -197,8 +197,7 @@ EN = {
 "how_3_p": "We set up your brand, website and bot within days. Agents add the app to their home screen and leads start coming in.",
 
 "roi_h": "One sale pays for your whole year.",
-"roi_num": "$3,600",
-"roi_p": "Sell one $120,000 condo at 3% and you earn $3,600. A year of Banaroo Growth, paid yearly, is $2,690. Every deal after that is a bonus.",
+"roi_p": "The commission from a single sale covers a full year of Banaroo. Every deal after that is extra.",
 
 "price_eyebrow": "Pricing",
 "price_h2": "CRM, website and lead bot in one. For less than most CRMs alone.",
@@ -498,8 +497,7 @@ TH = {
 "how_3_p": "เราตั้งค่าแบรนด์ เว็บไซต์ และบอทให้ภายในไม่กี่วัน เอเจนต์เพิ่มแอปไว้ที่หน้าจอโฮม แล้วลีดก็เริ่มเข้ามา",
 
 "roi_h": "ขายได้ห้องเดียว คุ้มทั้งปี",
-"roi_num": "฿108,000",
-"roi_p": "ขายคอนโด ฿3.6M คอมมิชชัน 3% ได้ ฿108,000 ค่า Banaroo Growth จ่ายรายปีแค่ ฿89,000 ดีลต่อจากนั้นคือโบนัสล้วนๆ",
+"roi_p": "คอมมิชชันจากการขายเพียงครั้งเดียวก็คุ้มค่า Banaroo ไปทั้งปี ดีลต่อจากนั้นคือกำไรล้วนๆ",
 
 "price_eyebrow": "ราคา",
 "price_h2": "CRM เว็บไซต์ และบอทหาลีดในที่เดียว ในราคาที่ถูกกว่า CRM ส่วนใหญ่อย่างเดียว",
