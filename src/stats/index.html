@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Banaroo stats</title>
+<link rel="icon" href="/img/logo.svg">
+<style>
+  :root { --mango:#FF6A2B; --ink:#141120; --muted:#6b6676; --paper:#FBF8F3; --card:#fff; --line:#ece6dc; --mint:#2BD99F; }
+  @media (prefers-color-scheme: dark) { :root { --ink:#f3efe8; --muted:#a39dae; --paper:#141120; --card:#1d1930; --line:#2c2742; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink); font:15px/1.45 Inter, system-ui, -apple-system, Segoe UI, sans-serif; }
+  .wrap { max-width:1040px; margin:0 auto; padding:28px 16px 60px; }
+  header { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin-bottom:22px; }
+  h1 { font-size:26px; margin:0; letter-spacing:-.01em; } h1 span { color:var(--mango); }
+  h2 { font-size:15px; margin:30px 0 10px; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:.06em; }
+  .seg { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:3px; background:var(--card); }
+  .seg button { border:0; background:none; color:var(--muted); padding:6px 13px; border-radius:999px; font:inherit; font-size:13px; cursor:pointer; }
+  .seg button.on { background:var(--ink); color:var(--paper); }
+  .tiles { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:12px; }
+  .tile { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:14px 16px; }
+  .tile .k { font-size:12.5px; color:var(--muted); }
+  .tile .v { font-size:30px; font-weight:700; letter-spacing:-.02em; margin-top:2px; }
+  .tile .s { font-size:12.5px; color:var(--muted); }
+  .tile.hot .v { color:var(--mango); }
+  table { width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden; font-size:13.5px; }
+  th, td { text-align:left; padding:8px 12px; border-bottom:1px solid var(--line); white-space:nowrap; }
+  th { font-weight:600; color:var(--muted); font-size:12px; }
+  td.n, th.n { text-align:right; font-variant-numeric:tabular-nums; }
+  tr:last-child td { border-bottom:0; }
+  .scroll { overflow-x:auto; border-radius:14px; }
+  .grid2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:14px; }
+  .bar { height:8px; border-radius:4px; background:var(--mango); opacity:.85; }
+  .note { color:var(--muted); font-size:13px; }
+  .gate { max-width:360px; margin:12vh auto; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px; }
+  .gate input { width:100%; padding:11px 13px; border:1px solid var(--line); border-radius:11px; font:inherit; background:var(--paper); color:var(--ink); margin:12px 0; }
+  .gate button { width:100%; padding:11px; border:0; border-radius:11px; background:var(--mango); color:#fff; font:inherit; font-weight:600; cursor:pointer; }
+  .err { color:#d33; font-size:13px; }
+</style>
+</head>
+<body>
+<div class="wrap" id="app"><p class="note">Loading…</p></div>
+<script>
+(function () {
+  var URL_ = 'https://vhyumgcjwuvqnekenpwb.supabase.co/rest/v1/rpc/stats_report';
+  var KEY = 'sb_publishable_fD_Bgv4L-lU9e_iQoAg0PQ_PdUaxSF8';
+  var app = document.getElementById('app');
+  var h = new URLSearchParams(location.hash.slice(1));
+  var key = h.get('key');
+  try { if (key) { localStorage.setItem('bn_stats_key', key); history.replaceState(null, '', location.pathname); } else key = localStorage.getItem('bn_stats_key'); } catch (e) {}
+  var days = 7;
+  var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+
+  function gate(msg) {
+    app.innerHTML = '<div class="gate"><h1>Banaroo <span>stats</span></h1><p class="note">Enter the stats key.</p>' +
+      (msg ? '<p class="err">' + esc(msg) + '</p>' : '') +
+      '<form id="g"><input id="k" type="password" autocomplete="current-password" placeholder="Stats key"><button>Open</button></form></div>';
+    document.getElementById('g').onsubmit = function (e) { e.preventDefault(); key = document.getElementById('k').value.trim(); try { localStorage.setItem('bn_stats_key', key); } catch (x) {} load(); };
+  }
+
+  function load() {
+    if (!key) return gate();
+    fetch(URL_, { method: 'POST', headers: { apikey: KEY, Authorization: 'Bearer ' + KEY, 'Content-Type': 'application/json' }, body: JSON.stringify({ p_key: key, p_days: days }) })
+      .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error(j.message || r.status); return j; }); })
+      .then(render)
+      .catch(function (e) { if (/wrong key/.test(e.message)) { try { localStorage.removeItem('bn_stats_key'); } catch (x) {} gate('That key did not work.'); } else app.innerHTML = '<p class="err">Could not load: ' + esc(e.message) + '</p>'; });
+  }
+
+  function render(d) {
+    var tot = {}; (d.totals || []).forEach(function (t) { tot[t.site + ':' + t.event] = t; });
+    var g = function (k, f) { return (tot[k] || {})[f || 'people'] || 0; };
+    var cta = function (site) { return g(site + ':cta'); };
+    var tiles = [
+      ['banaroo.app visitors', g('banaroo:visit'), g('banaroo:visit', 'people_today') + ' today'],
+      ['Clicked a demo', g('banaroo:demo_click'), 'from banaroo.app'],
+      ['Opened demo CRM', g('crm:visit'), g('crm:visit', 'people_today') + ' today'],
+      ['Signed in to demo CRM', g('crm:login'), g('crm:login', 'people_today') + ' today'],
+      ['Opened demo website', g('website:visit'), g('website:visit', 'people_today') + ' today'],
+      ['Tested the website form', g('website:form_submit'), 'sent a test enquiry'],
+      ['Clicked "Get it for your agency"', cta('crm') + cta('website'), 'CRM ' + cta('crm') + ' · website ' + cta('website'), 1],
+      ['Sent Get started form', g('banaroo:form_submit'), 'real sign-ups', 1],
+    ];
+    var html = '<header><h1>Banaroo <span>stats</span></h1><div class="seg">' +
+      [[1, 'Today'], [7, '7 days'], [30, '30 days'], [90, '90 days']].map(function (o) { return '<button data-d="' + o[0] + '" class="' + (o[0] === days ? 'on' : '') + '">' + o[1] + '</button>'; }).join('') +
+      '</div></header><p class="note">Unique people (one browser = one person), Bangkok time. Reloads within 30 minutes count once.</p><div class="tiles">' +
+      tiles.map(function (t) { return '<div class="tile' + (t[3] ? ' hot' : '') + '"><div class="k">' + esc(t[0]) + '</div><div class="v">' + t[1] + '</div><div class="s">' + esc(t[2]) + '</div></div>'; }).join('') + '</div>';
+
+    // Daily table
+    var byDay = {}; (d.daily || []).forEach(function (r) { (byDay[r.day] = byDay[r.day] || {})[r.site + ':' + r.event] = r.people; });
+    var cols = [['banaroo:visit', 'banaroo.app'], ['banaroo:demo_click', 'Demo clicks'], ['crm:visit', 'CRM opened'], ['crm:login', 'CRM sign-ins'], ['website:visit', 'Website opened'], ['crm:cta', 'CTA (CRM)'], ['website:cta', 'CTA (site)'], ['banaroo:form_submit', 'Get started']];
+    var dayKeys = Object.keys(byDay).sort().reverse();
+    html += '<h2>By day</h2>' + (dayKeys.length ? '<div class="scroll"><table><tr><th>Day</th>' + cols.map(function (c) { return '<th class="n">' + c[1] + '</th>'; }).join('') + '</tr>' +
+      dayKeys.map(function (k) { return '<tr><td>' + esc(new Date(k + 'T00:00:00').toLocaleDateString(undefined, { weekday: 'short', day: 'numeric', month: 'short' })) + '</td>' + cols.map(function (c) { return '<td class="n">' + (byDay[k][c[0]] || '') + '</td>'; }).join('') + '</tr>'; }).join('') + '</table></div>' : '<p class="note">No visits yet in this period.</p>');
+
+    // Sources, languages, clicks
+    var list = function (rows, label, val) {
+      if (!rows.length) return '<p class="note">Nothing yet.</p>';
+      var max = Math.max.apply(null, rows.map(val)) || 1;
+      return '<table>' + rows.map(function (r) { return '<tr><td>' + esc(label(r)) + '</td><td style="width:40%"><div class="bar" style="width:' + Math.max(4, val(r) / max * 100) + '%"></div></td><td class="n">' + val(r) + '</td></tr>'; }).join('') + '</table>';
+    };
+    var siteName = { banaroo: 'banaroo.app', crm: 'Demo CRM', website: 'Demo website' };
+    html += '<div class="grid2"><div><h2>Where banaroo.app visitors came from</h2>' + list(d.refs || [], function (r) { return r.ref; }, function (r) { return r.people; }) + '</div>' +
+      '<div><h2>Languages</h2>' + list((d.langs || []).sort(function (a, b) { return b.people - a.people; }), function (r) { return siteName[r.site] + ' · ' + r.lang.toUpperCase(); }, function (r) { return r.people; }) + '</div></div>';
+    html += '<h2>Which buttons get clicked</h2>' + list(d.clicks || [], function (r) { return siteName[r.site] + ' · ' + (r.event === 'cta' ? 'Get it for your agency' : 'demo link') + (r.detail ? ' (' + r.detail + ')' : ''); }, function (r) { return r.people; });
+
+    var evName = { visit: 'opened', login: 'signed in', cta: 'clicked Get it', demo_click: 'clicked demo', form_submit: 'sent form' };
+    html += '<h2>Latest activity</h2>' + ((d.recent || []).length ? '<div class="scroll"><table><tr><th>When</th><th>Where</th><th>What</th><th>Page</th><th>Lang</th><th>From</th><th>Person</th></tr>' +
+      d.recent.map(function (r) { return '<tr><td>' + esc(new Date(r.at).toLocaleString(undefined, { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })) + '</td><td>' + siteName[r.site] + '</td><td>' + esc(evName[r.event] || r.event) + (r.detail ? ' · ' + esc(r.detail) : '') + '</td><td>' + esc(r.path) + '</td><td>' + esc((r.lang || '').toUpperCase()) + '</td><td>' + esc(r.ref) + '</td><td>#' + esc(r.who) + '</td></tr>'; }).join('') + '</table></div>' : '<p class="note">Nothing yet.</p>');
+
+    app.innerHTML = html;
+    app.querySelectorAll('.seg button').forEach(function (b) { b.onclick = function () { days = +b.dataset.d; load(); }; });
+  }
+  load();
+})();
+</script>
+</body>
+</html>

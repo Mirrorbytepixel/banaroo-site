@@ -1,4 +1,42 @@
 (function () {
+  // Visit counter (no cookies): a random id in localStorage tells unique visitors apart.
+  // Rows go to the demo Supabase (private.site_events); numbers are on /stats/.
+  var T_URL = 'https://vhyumgcjwuvqnekenpwb.supabase.co/rest/v1/rpc/track_event';
+  var T_KEY = 'sb_publishable_fD_Bgv4L-lU9e_iQoAg0PQ_PdUaxSF8';
+  var vid = (function () {
+    try {
+      var v = localStorage.getItem('bn_vid');
+      if (!v) { v = (crypto.randomUUID ? crypto.randomUUID() : String(Math.random()).slice(2) + Date.now()); localStorage.setItem('bn_vid', v); }
+      return v;
+    } catch (e) { return 'anon-' + String(Math.random()).slice(2, 12); }
+  })();
+  var pageLang = document.documentElement.lang || 'en';
+  var track = function (event, detail) {
+    if (/^(localhost|127\.)/.test(location.hostname) || navigator.webdriver) return;
+    var ref = '';
+    try { if (document.referrer && document.referrer.indexOf(location.origin) !== 0) ref = new URL(document.referrer).hostname; } catch (e) {}
+    try {
+      fetch(T_URL, {
+        method: 'POST', keepalive: true,
+        headers: { apikey: T_KEY, Authorization: 'Bearer ' + T_KEY, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ p_site: 'banaroo', p_event: event, p_visitor: vid, p_path: location.pathname, p_lang: pageLang, p_ref: ref || null, p_detail: detail || null })
+      }).catch(function () {});
+    } catch (e) {}
+  };
+  window.banarooTrack = track;
+  var from = new URLSearchParams(location.search).get('from');
+  track('visit', from ? 'from-' + from.slice(0, 20) : null);
+  // Clicks on the two demos (which demo, and where on the page)
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+    var h = a.getAttribute('href') || '';
+    var which = h.indexOf('demo.banaroo.app') > -1 ? 'crm' : h.indexOf('baylight.banaroo.app') > -1 ? 'website' : '';
+    if (!which) return;
+    var sec = a.closest('section[id], header, nav, footer, .mbar');
+    track('demo_click', which + (sec ? '@' + (sec.id || sec.tagName.toLowerCase()) : ''));
+  }, true);
+
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Sticky nav border
@@ -227,7 +265,7 @@
       if (tooBig()) { if (note) { note.classList.add('warn'); note.scrollIntoView({ block: 'center' }); } return; }
       var btn = form.querySelector('button[type=submit]'); btn.disabled = true;
       fetch('/', { method: 'POST', body: new FormData(form) })
-        .then(function (r) { if (!r.ok) throw new Error(r.status); form.querySelector('.thanks').hidden = false; })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); form.querySelector('.thanks').hidden = false; track('form_submit', String(new FormData(form).get('plan') || '')); })
         .catch(function () { btn.disabled = false; form.submit(); });
     });
   }
