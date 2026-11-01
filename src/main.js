@@ -219,6 +219,26 @@
     }
   }
 
+  // Website steps: the flow lights up step by step and loops while in view
+  var sf = document.querySelector('.site-flow');
+  if (sf) {
+    if (reduce || !('IntersectionObserver' in window)) sf.classList.add('go');
+    else {
+      var frun = false, ftimer, fon = false;
+      var ftick = function () {
+        fon = !fon;
+        sf.classList.toggle('go', fon);
+        ftimer = setTimeout(function () { if (frun) ftick(); }, fon ? 5200 : 900);
+      };
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting && !frun) { frun = true; fon = false; ftick(); }
+          else if (!e.isIntersecting && frun) { frun = false; clearTimeout(ftimer); }
+        });
+      }, { threshold: 0.35 }).observe(sf);
+    }
+  }
+
   // Launch offer: days-left counter; the banner hides itself after the end date
   var offer = document.getElementById('offer');
   if (offer) {
